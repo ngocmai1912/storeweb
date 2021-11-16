@@ -18,7 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author trinh
  */
-@WebServlet(name = "CartControl", urlPatterns = {"/cart"})
+
+@WebServlet("/cart")
 public class CartControl extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
