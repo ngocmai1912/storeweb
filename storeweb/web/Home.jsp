@@ -1,14 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html>
-<head>
-<title>Book Store</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
-</head>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,18 +11,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!------ Include the above in your HEAD tag ---------->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <style>
-            .product-img {
-                width: 100%;
-                height: 100%;
-            }   
-            .card{
-                width: 300px;
-                height: 350px;
-                margin-bottom: 30px;
-            }
-        </style>
+        <link href="css/Home.css" rel="stylesheet">
     </head>
     <body>
         <jsp:include page="Navigation.jsp"></jsp:include>
@@ -45,67 +27,98 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row row-cols-3">
-                     <c:forEach items="${listBook}" var="o">
-                        <div class="card ml-5 mb-5">
-                            <img class="product-img card-img-top" src="${o.photo}" alt="Card image cap">
-                            <div class="card-body mt-2">
-                                <h4 class="card-title show_txt mb-2"><a href="detail?pid=${o.id}&type=${"book"}" title="View Product">${o.book.title}</a></h4>
-                                <div class="row">
+                <section class="hero">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="hero__categories">
+                                    <div class="hero__categories__all">
+                                        <i class="fa fa-bars"></i>
+                                        <span>All departments</span>
+                                    </div>
+                                    <ul>
+                                        <li><a href="#">Book</a></li>
+                                        <li><a href="#">Clothes</a></li>
+                                        <li><a href="#">Electronic</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="hero__item set-bg"><img src="image/banner.jpg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="row">
+                    <c:forEach items="${listBook}" var="o">                        
+                        <div class="col-3 mx-3 my-5">
+                            <div class="card">
+                                <img class="card-img-top img-fluid rounded product-img" src="${o.photo}" alt="photo">
+                                <div class="card-body">
+                                  <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"book"}" title="View Product">${o.book.title}</a></h5>
+                                  <div class="row">
                                     <div class="col">
                                         <p class="btn btn-danger btn-block">${o.price} $</p>
                                     </div>
                                     <div class="col">
                                         <a href="#" class="btn btn-success btn-block">Add to cart</a>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
                     </c:forEach>
                     <c:forEach items="${listClothes}" var="o">
-                        <div class="card ml-5 mb-5">
-                            <img class="product-img card-img-top" src="${o.photo}" alt="Card image cap">
-                            <div class="card-body mt-2">
-                                <h4 class="card-title show_txt mb-2"><a href="detail?pid=${o.id}&type=${"clothes"}" title="View Product">${o.clothes.name}</a></h4>
-                                <div class="row">
+                        <div class="col-3 mx-3 my-5">
+                            <div class="card">
+                                <img class="card-img-top img-fluid rounded product-img" src="${o.photo}" alt="photo">
+                                <div class="card-body">
+                                  <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"clothes"}" title="View Product">${o.clothes.name}</a></h5>
+                                  <div class="row">
                                     <div class="col">
                                         <p class="btn btn-danger btn-block">${o.price} $</p>
                                     </div>
                                     <div class="col">
                                         <a href="#" class="btn btn-success btn-block">Add to cart</a>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
                     </c:forEach>
                     <c:forEach items="${listElectronic}" var="o">
-                        <div class="card ml-5 mb-5">
-                            <img class="product-img card-img-top" src="${o.photo}" alt="Card image cap">
-                            <div class="card-body mt-2">
-                                <h4 class="card-title show_txt mb-2"><a href="detail?pid=${o.id}&type=${"electronic"}" title="View Product">${o.electronic.name}</a></h4>
-                                <div class="row">
+                        <div class="col-3 mx-3 my-5">
+                            <div class="card">
+                                <img class="card-img-top img-fluid rounded product-img" src="${o.photo}" alt="photo">
+                                <div class="card-body">
+                                  <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"electronic"}" title="View Product">${o.electronic.name}</a></h5>
+                                  <div class="row">
                                     <div class="col">
                                         <p class="btn btn-danger btn-block">${o.price} $</p>
                                     </div>
                                     <div class="col">
                                         <a href="#" class="btn btn-success btn-block">Add to cart</a>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
                     </c:forEach>
                     <c:forEach items="${listShoes}" var="o">
-                        <div class="card ml-5 mb-5">
-                            <img class="product-img card-img-top" src="${o.photo}" alt="Card image cap">
-                            <div class="card-body mt-2">
-                                <h4 class="card-title show_txt mb-2"><a href="detail?pid=${o.id}&type=${"shoes"}" title="View Product">${o.shoes.name}</a></h4>
-                                <div class="row">
+                        <div class="col-3 mx-3 my-5">
+                            <div class="card">
+                                <img class="card-img-top img-fluid rounded product-img" src="${o.photo}" alt="photo">
+                                <div class="card-body">
+                                  <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"electronic"}" title="View Product">${o.shoes.name}</a></h5>
+                                  <div class="row">
                                     <div class="col">
                                         <p class="btn btn-danger btn-block">${o.price} $</p>
                                     </div>
                                     <div class="col">
                                         <a href="#" class="btn btn-success btn-block">Add to cart</a>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
