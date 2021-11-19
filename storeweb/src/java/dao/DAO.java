@@ -15,7 +15,7 @@ public class DAO {
     public static Connection connection;
     private String DB_URL = "jdbc:mysql://localhost:3306/store?autoReconnect=true&useSSL=false";
     private String USER_NAME = "root";
-    private String PASSWORD = "root";
+    private String PASSWORD = "staywithme";
     
     public DAO() {
         if(connection==null) {
