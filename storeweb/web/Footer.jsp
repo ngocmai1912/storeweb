@@ -15,7 +15,7 @@
 
         <div class="col-lg-2 mb-3">
           <h5 class="text-white fw-bold text-center" >HỖ TRỢ</h5>
-          <hr class="bg-white ms-0 mb-3" style="width: 60px; height: 2px;">
+          <hr class="bg-white mb-3" style="width: 60px; height: 2px;">
           <ul class="list-inline">
             <li> <a class="text-white" style="text-decoration: none;" href="#" >Chính sách khách hàng</a></li>
             <li> <a class="text-white" style="text-decoration: none;" href="#" >Chính sách bảo mật</a></li>
