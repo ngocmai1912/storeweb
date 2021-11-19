@@ -25,7 +25,7 @@
 }
 
 .hero__categories__all {
-        background: #7fad39;
+        background: #dc3545;
         position: relative;
         padding: 10px 25px 10px 40px;
         cursor: pointer;
@@ -43,25 +43,23 @@
         color: #ffffff;
 }
 
-.hero__categories__all:after {
-        position: absolute;
-        right: 18px;
-        top: 9px;
-        content: "3";
-        font-family: "ElegantIcons";
-        font-size: 18px;
-        color: #ffffff;
-}
-
-.hero__categories ul {
+.hero__categories{
         border: 1px solid #ebebeb;
-        padding-left: 40px;
-        padding-top: 10px;
-        padding-bottom: 12px;
 }
 
-.hero__categories ul li {
+.wrap-category {
+    text-indent: 40px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.hero__categories ul li, .sub-btn {
         list-style: none;
+}
+
+.hero__categories a:hover {
+    background-color: #e9ecef;
+    font-weight: 600;
 }
 
 .hero__categories ul li a {
@@ -69,6 +67,11 @@
         color: #1c1c1c;
         line-height: 39px;
         display: block;
+        text-decoration: none;
+}
+
+.sub-menu {
+    display: none;
 }
 
 .hero__item {

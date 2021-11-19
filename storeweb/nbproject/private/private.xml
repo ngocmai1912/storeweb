@@ -3,55 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/Login.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/ItemDetailShoes.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/css/ItemDetail.css</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/css/style.css</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/SignUpControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/Cart.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/SearchController.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/model/order/Payment.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/DAO.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/model/customer/Address.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/electronicDAO/ElectronicDAO.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/DetailController.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/bookDAO/BookDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/OrderControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/model/order/Cart.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/orderDAO/OrderDAO.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/RemoveProductControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/HomeController.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/ItemDetailClothes.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/CheckOut.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/CheckOut.html</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/ItemDetailElectronic.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/Home.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/LoginControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/bookDAO/BookDAO.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/ShowCartControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/shoesDAO/ShoesDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/customerDAO/CustomerDAO.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/Navigation.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/model/order/Order.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/model/order/Shipment.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/shoesDAO/ShoesDAO.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/electronicDAO/ElectronicDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/CartControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/clothesDAO/ClothesDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/ItemDetailBook.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/clothesDAO/ClothesDAO.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/ShowCartController.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/model/customer/Customer.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/customerDAO/CustomerDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/model/customer/FullName.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/Controller/SubControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/model/electronic/Electronic.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/model/customer/Account.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/Search.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/web/css/login.css</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/orderDAO/CartDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/orderDAO/OrderDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/TL/storeweb/storeweb/src/java/dao/orderDAO/CartDAO.java</file>
+            <file>file:/D:/DOCUMENT/KI_7/PhanTichThietKeHeThongThongTin/BTL/storeweb/storeweb/web/Search.jsp</file>
+            <file>file:/D:/DOCUMENT/KI_7/PhanTichThietKeHeThongThongTin/BTL/storeweb/storeweb/web/css/Home.css</file>
+            <file>file:/D:/DOCUMENT/KI_7/PhanTichThietKeHeThongThongTin/BTL/storeweb/storeweb/src/java/Controller/HomeController.java</file>
+            <file>file:/D:/DOCUMENT/KI_7/PhanTichThietKeHeThongThongTin/BTL/storeweb/storeweb/web/Navigation.jsp</file>
+            <file>file:/D:/DOCUMENT/KI_7/PhanTichThietKeHeThongThongTin/BTL/storeweb/storeweb/web/Home.jsp</file>
+            <file>file:/D:/DOCUMENT/KI_7/PhanTichThietKeHeThongThongTin/BTL/storeweb/storeweb/src/java/Controller/SearchController.java</file>
         </group>
     </open-files>
 </project-private>
