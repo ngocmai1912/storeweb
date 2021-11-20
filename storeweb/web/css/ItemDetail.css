@@ -172,7 +172,7 @@ and open the template in the editor.
 
 .gallery-wrap .img-small-wrap .item-gallery {
     width: 60px;
-    height: 60px;
+    height: auto;
     border: 1px solid #ddd;
     margin: 7px 2px;
     display: inline-block;
@@ -185,15 +185,12 @@ and open the template in the editor.
 .gallery-wrap .img-small-wrap img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: cover;
+    object-fit: contain ;
     border-radius: 4px;
     cursor: zoom-in;
 }
 .img-big-wrap img{
     width: 100% !important;
-    /*height: 300px !important;*/
-}
-
-.product-img {
-    width: 100%;
+    height: auto !important;
+    margin-top: 20px;
 }
