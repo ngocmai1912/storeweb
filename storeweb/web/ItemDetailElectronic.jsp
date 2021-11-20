@@ -4,6 +4,7 @@
     Author     : DELL
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,40 +14,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href="css/ItemDetail.css" rel="stylesheet" type="text/css"/>
-        <style>
-            .gallery-wrap .img-big-wrap img {
-                height: 450px;
-                width: auto;
-                display: inline-block;
-                cursor: zoom-in;
-            }
-
-
-            .gallery-wrap .img-small-wrap .item-gallery {
-                width: 60px;
-                height: 60px;
-                border: 1px solid #ddd;
-                margin: 7px 2px;
-                display: inline-block;
-                overflow: hidden;
-            }
-
-            .gallery-wrap .img-small-wrap {
-                text-align: center;
-            }
-            .gallery-wrap .img-small-wrap img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-                border-radius: 4px;
-                cursor: zoom-in;
-            }
-            .img-big-wrap img{
-                width: 100% !important;
-                height: 300px !important;
-            }
-        </style>
+        <style><%@include file="css/ItemDetail.css"%></style>
     </head>
     <body>
         <jsp:include page="Navigation.jsp"></jsp:include>
@@ -57,7 +25,7 @@
                     <div class="container">
                         <div class="card">
                             <div class="row">
-                                <aside class="col-sm-5 border-right">
+                                <aside class="col-sm-5">
                                     <article class="gallery-wrap"> 
                                         <div class="img-big-wrap">
                                             <div> <a href="#"><img src="${detail.photo}"></a></div>
@@ -70,11 +38,25 @@
                                     <article class="card-body p-5">
                                         <h3 class="title mb-3">${detail.electronic.name}</h3>
 
-                                        <p class="price-detail-wrap"> 
+                                       <p class="price-detail-wrap"> 
                                             <span class="price h3 text-warning"> 
-                                                <span class="currency">US $</span><span class="num">${detail.price}</span>
+                                                <span class="num">${Math.round(detail.price)}</span>
+                                                <span class="currency">VNĐ</span>
                                             </span> 
                                         </p> <!-- price-detail-wrap .// -->
+                                        <p> 
+                                            <span class="text-primary font-weight-bold"> 
+                                                <span>Khuyến mãi: </span>
+                                                <span>${Math.round(detail.discount*100)}</span>
+                                                <span>%</span>
+                                            </span> 
+                                        </p>
+                                        
+                                        <p> 
+                                            <span class="font-weight-bold">Hãng: </span>
+                                            <span>${detail.electronic.producer.name}</span>
+                                        </p> 
+                                        
                                         <dl class="item-property">
                                             <dt>Description</dt>
                                             <dd><p>
@@ -99,18 +81,100 @@
 
                                         </div> <!-- row.// -->
                                         <hr>
-                                        <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-                                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+                                        <a href="cart?id=${detail.id}" class="btn btn-md btn-success text-uppercase">mua ngay</a>
+                                        <a href="#" class="btn btn-md btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng </a>
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->
                         </div> <!-- card.// -->
-
-
                     </div>
                 </div>
             </div>
+            <div class="row ml-4 mb-5">
+                <div class="col">
+                    <h4 class="text-danger my-4">THÔNG TIN CHI TIẾT</h4>
+                    <p> 
+                        <span class="font-weight-bold">RAM: </span>
+                        <span>${detail.electronic.ram} GB</span>
+                    </p>    
+                    <p> 
+                        <span class="font-weight-bold">Màn hình: </span>
+                        <span>${detail.electronic.screenType}, </span>
+                        <span>${detail.electronic.screenSize} inch</span>
+                    </p> 
+                    <p> 
+                        <span class="font-weight-bold">Hệ hiều hành: </span>
+                        <span>${detail.electronic.operatingSystem}</span>
+                    </p>
+                    <p> 
+                        <span class="font-weight-bold">Pin: </span>
+                        <span>${detail.electronic.battery} mAh</span>
+                    </p>
+                    <p> 
+                        <span class="font-weight-bold">Sạc: </span>
+                        <span>${detail.electronic.charger} W</span>
+                    </p>
+
+                    <c:if test="${detail.electronic.type == 'Mobilephone'}">
+                        <p> 
+                            <span class="font-weight-bold">Chip: </span>
+                            <span>${d.chip}</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Camera: </span>
+                            <span>Trước: ${d.selfieCamera}MP, Sau: ${d.primaryCamera}MP</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Bộ nhớ: </span>
+                            <span>${d.memory}GB</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Mô tả thêm: </span>
+                            <span>${d.note}</span>
+                        </p>
+                    </c:if>
+                        
+                    <c:if test="${detail.electronic.type == 'Laptop'}">
+                        <p> 
+                            <span class="font-weight-bold">CPU: </span>
+                            <span>${d.cpu}, ${d.cpuSpeed}GHz</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Ổ cứng: </span>
+                            <span>${d.typeHardDrive} ${d.hardDrive}GB</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Card đồ họa: </span>
+                            <span>${d.graphicCard}</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Kích thước: </span>
+                            <span>${d.dimemsions}</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Trọng lượng: </span>
+                            <span>${d.weight}</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Công nghệ màn hình: </span>
+                            <span>${d.displayTechnology}</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Cổng kết nối: </span>
+                            <span>${d.communicationStandard}</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Thiết kế: </span>
+                            <span>${d.design}</span>
+                        </p>
+                        <p> 
+                            <span class="font-weight-bold">Mô tả thêm: </span>
+                            <span>${d.note}</span>
+                        </p>
+                    </c:if>
+                </div>
+            </div>
         </div>
-       <%--<jsp:include page="Footer.jsp"></jsp:include>--%>
+       <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

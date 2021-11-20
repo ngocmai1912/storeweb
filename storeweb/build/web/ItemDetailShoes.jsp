@@ -14,39 +14,7 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="css/ItemDetail.css" rel="stylesheet" type="text/css"/>
-        <style>
-            .gallery-wrap .img-big-wrap img {
-                height: 450px;
-                width: auto;
-                display: inline-block;
-                cursor: zoom-in;
-            }
-
-
-            .gallery-wrap .img-small-wrap .item-gallery {
-                width: 60px;
-                height: 60px;
-                border: 1px solid #ddd;
-                margin: 7px 2px;
-                display: inline-block;
-                overflow: hidden;
-            }
-
-            .gallery-wrap .img-small-wrap {
-                text-align: center;
-            }
-            .gallery-wrap .img-small-wrap img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-                border-radius: 4px;
-                cursor: zoom-in;
-            }
-            .img-big-wrap img{
-                width: 100% !important;
-                height: 300px !important;
-            }
-        </style>
+        <style><%@include file="css/ItemDetail.css"%></style>
     </head>
     <body>
         <jsp:include page="Navigation.jsp"></jsp:include>
@@ -57,7 +25,7 @@
                     <div class="container">
                         <div class="card">
                             <div class="row">
-                                <aside class="col-sm-5 border-right">
+                                <aside class="col-sm-5">
                                     <article class="gallery-wrap"> 
                                         <div class="img-big-wrap">
                                             <div> <a href="#"><img src="${detail.photo}"></a></div>
@@ -72,11 +40,32 @@
 
                                         <p class="price-detail-wrap"> 
                                             <span class="price h3 text-warning"> 
-                                                <span class="currency">US $</span><span class="num">${detail.price}</span>
+                                                <span class="num">${Math.round(detail.price)}VNĐ</span>
                                             </span> 
                                         </p> <!-- price-detail-wrap .// -->
+                                        <p> 
+                                            <span class="text-primary font-weight-bold"> 
+                                                <span>Khuyến mãi: </span>
+                                                <span>${Math.round(detail.discount*100)}</span>
+                                                <span>%</span>
+                                            </span> 
+                                        </p>
+                                        <p> 
+                                            <span class="font-weight-bold">Hãng: </span>
+                                            <span>${detail.shoes.brandShoes.name}</span>
+                                        </p>
+                                        
+                                        <p> 
+                                            <span class="font-weight-bold">Màu sắc: </span>
+                                            <span>${detail.shoes.color}</span>
+                                        </p>
+                                        
+                                        <p> 
+                                            <span class="font-weight-bold">Chất liệu: </span>
+                                            <span>${detail.shoes.material}</span>
+                                        </p>
                                         <dl class="item-property">
-                                            <dt>Description</dt>
+                                            <dt>Mô tả</dt>
                                             <dd><p>
                                                     ${detail.description}
                                                 </p></dd>
@@ -86,7 +75,7 @@
                                         <div class="row">
                                             <div class="col-sm-5">
                                                 <dl class="param param-inline">
-                                                    <dt>Quantity: </dt>
+                                                    <dt>Số lượng: </dt>
                                                     <dd>
                                                         <select class="form-control form-control-sm" style="width:70px;">
                                                             <option> 1 </option>
@@ -99,8 +88,8 @@
 
                                         </div> <!-- row.// -->
                                         <hr>
-                                        <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-                                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+                                        <a href="cart?id=${detail.id}" class="btn btn-md btn-success text-uppercase">mua ngay</a>
+                                        <a href="#" class="btn btn-md btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng </a>
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->
@@ -111,6 +100,6 @@
                 </div>
             </div>
         </div>
-       <%--<jsp:include page="Footer.jsp"></jsp:include>--%>
+       <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

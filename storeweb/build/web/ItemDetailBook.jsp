@@ -39,12 +39,29 @@
 
                                         <p class="price-detail-wrap"> 
                                             <span class="price h3 text-warning"> 
-                                                <span class="currency">US $</span><span class="num">${detail.price}</span>
+                                                <span class="num">${Math.round(detail.price)}VNĐ</span>
                                             </span> 
                                         </p> <!-- price-detail-wrap .// -->
+                                        <p> 
+                                            <span class="text-primary font-weight-bold"> 
+                                                <span>Khuyến mãi: </span>
+                                                <span>${Math.round(detail.discount*100)}</span>
+                                                <span>%</span>
+                                            </span> 
+                                        </p>
+                                        
+                                        <p> 
+                                            <span class="font-weight-bold">Tác giả: </span>
+                                            <span>${detail.book.author.name}</span>
+                                        </p>
+                                        
+                                        <p> 
+                                            <span class="font-weight-bold">NXB: </span>
+                                            <span>${detail.book.publisher.name}</span>
+                                        </p>
+                                        
                                         <dl class="item-property">
-                                            <dt>Description</dt>
-                                            <dd><p>Tác giả: ${detail.book.author.name}</p></dd>
+                                            <dt>Mô tả</dt>
                                             <dd><p>
                                                     ${detail.description}
                                                 </p></dd>
@@ -54,7 +71,7 @@
                                         <div class="row">
                                             <div class="col-sm-5">
                                                 <dl class="param param-inline">
-                                                    <dt>Quantity: </dt>
+                                                    <dt>Số lượng: </dt>
                                                     <dd>
                                                         <select class="form-control form-control-sm" style="width:70px;">
                                                             <option> 1 </option>
@@ -67,8 +84,8 @@
 
                                         </div> <!-- row.// -->
                                         <hr>
-                                        <a href="cart?id=${detail.id}" class="btn btn-primary">Buy</a>
-                                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+                                        <a href="cart?id=${detail.id}" class="btn btn-md btn-success text-uppercase">mua ngay</a>
+                                        <a href="#" class="btn btn-md btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng </a>
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->
@@ -79,6 +96,6 @@
                 </div>
             </div>
         </div>
-       <%--<jsp:include page="Footer.jsp"></jsp:include>--%>
+       <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>
