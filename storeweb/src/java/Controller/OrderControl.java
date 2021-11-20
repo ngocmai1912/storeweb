@@ -26,7 +26,7 @@ public class OrderControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Cookie arr[] = request.getCookies();
+//        Cookie arr[] = request.getCookies();
 //        List<Product> list = new ArrayList<>();
 //        ProductDAO pdao = new ProductDAO();
 //        for (Cookie o : arr) {
