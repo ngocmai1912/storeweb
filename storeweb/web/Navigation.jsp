@@ -47,7 +47,7 @@
             </div>
             <form action="search" method="post" class="form-inline my-2 my-lg-0">
                 
-                <a class="btn btn-success btn-sm ml-3" href="Cart.jsp">
+                <a class="btn btn-success btn-sm ml-3" href="cart">
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">3</span>
                 </a>

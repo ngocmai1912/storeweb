@@ -22,6 +22,7 @@ import model.book.ItemBook;
 import model.clothes.ItemClothes;
 import model.electronic.ItemElectronic;
 import model.shoes.ItemShoes;
+import utils.CartUtils;
 
 /**
  *
@@ -50,7 +51,6 @@ public class DetailController extends HttpServlet{
         String type = req.getParameter("type");
         if(type.compareToIgnoreCase("book") == 0){
             ItemBook itemBook = bookDAOImpl.searchItemByID(Integer.parseInt(id));
-
             req.setAttribute("detail", itemBook);
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("ItemDetailBook.jsp");
             requestDispatcher.forward(req, resp);
@@ -73,7 +73,8 @@ public class DetailController extends HttpServlet{
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("ItemDetailShoes.jsp");
             requestDispatcher.forward(req, resp);
         }
-        
     }
+    
+    
     
 }

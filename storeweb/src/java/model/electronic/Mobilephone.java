@@ -14,20 +14,22 @@ import java.util.Date;
 public class Mobilephone extends Electronic implements Serializable{
     private String chip;
     private float primaryCamera;
+    private float selfiCamera;
     private int memory;
     private String sim;
     private String note;
 
-    public Mobilephone() {
-    }
-
-    public Mobilephone(String chip, float primaryCamera, int memory, String sim, String note, int id, String name, float price, String type, int ram, String color, float screenSize, String screenType, String operatingSystem, Date releaseDate, int battery, int charger, Producer producer) {
+    public Mobilephone(String chip, float primaryCamera, float selfiCamera, int memory, String sim, String note, int id, String name, float price, String type, int ram, String color, float screenSize, String screenType, String operatingSystem, Date releaseDate, int battery, int charger, Producer producer) {
         super(id, name, price, type, ram, color, screenSize, screenType, operatingSystem, releaseDate, battery, charger, producer);
         this.chip = chip;
         this.primaryCamera = primaryCamera;
+        this.selfiCamera = selfiCamera;
         this.memory = memory;
         this.sim = sim;
         this.note = note;
+    }
+
+    public Mobilephone() {
     }
 
     public String getChip() {
@@ -44,6 +46,14 @@ public class Mobilephone extends Electronic implements Serializable{
 
     public void setPrimaryCamera(float primaryCamera) {
         this.primaryCamera = primaryCamera;
+    }
+
+    public float getSelfiCamera() {
+        return selfiCamera;
+    }
+
+    public void setSelfiCamera(float selfiCamera) {
+        this.selfiCamera = selfiCamera;
     }
 
     public int getMemory() {
@@ -69,6 +79,10 @@ public class Mobilephone extends Electronic implements Serializable{
     public void setNote(String note) {
         this.note = note;
     }
+    
+    
+    
+   
     
     
 }

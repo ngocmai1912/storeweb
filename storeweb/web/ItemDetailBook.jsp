@@ -4,6 +4,7 @@
     Author     : DELL
 --%>
 
+<%@page import="utils.CartUtils"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -99,8 +100,19 @@
 
                                         </div> <!-- row.// -->
                                         <hr>
-                                        <a href="cart?id=${detail.id}" class="btn btn-primary">Buy</a>
-                                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+                                        <a href="cart" class="btn btn-primary">Buy now
+                                            <% 
+                                               int id1 = Integer.parseInt(request.getParameter("pid"));
+                                               CartUtils.addBookToCart(id1); 
+                                            %>
+                                        </a>
+                                        <button class="btn btn-lg btn-outline-primary text-uppercase"> 
+                                            <i class="fas fa-shopping-cart">Add to cart </i> 
+                                            <% 
+                                               int id = Integer.parseInt(request.getParameter("pid"));
+                                               CartUtils.addBookToCart(id); 
+                                            %>
+                                        </button>
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->
