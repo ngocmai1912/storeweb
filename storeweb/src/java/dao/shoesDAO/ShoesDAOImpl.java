@@ -4,13 +4,12 @@
  */
 package dao.shoesDAO;
 
-import com.mysql.cj.xdevapi.Result;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.ws.spi.http.HttpExchange;
 import model.shoes.BrandShoes;
 import model.shoes.ItemShoes;
 import model.shoes.Shoes;

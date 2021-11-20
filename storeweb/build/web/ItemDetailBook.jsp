@@ -14,40 +14,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href="css/ItemDetail.css" rel="stylesheet" type="text/css"/>
-        <style>
-            .gallery-wrap .img-big-wrap img {
-                height: 450px;
-                width: auto;
-                display: inline-block;
-                cursor: zoom-in;
-            }
-
-
-            .gallery-wrap .img-small-wrap .item-gallery {
-                width: 60px;
-                height: 60px;
-                border: 1px solid #ddd;
-                margin: 7px 2px;
-                display: inline-block;
-                overflow: hidden;
-            }
-
-            .gallery-wrap .img-small-wrap {
-                text-align: center;
-            }
-            .gallery-wrap .img-small-wrap img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-                border-radius: 4px;
-                cursor: zoom-in;
-            }
-            .img-big-wrap img{
-                width: 100% !important;
-                height: 300px !important;
-            }
-        </style>
+        <style><%@include file="css/ItemDetail.css"%></style>
     </head>
     <body>
         <jsp:include page="Navigation.jsp"></jsp:include>
@@ -58,10 +25,10 @@
                     <div class="container">
                         <div class="card">
                             <div class="row">
-                                <aside class="col-sm-5 border-right">
+                                <aside class="col-sm-5">
                                     <article class="gallery-wrap"> 
                                         <div class="img-big-wrap">
-                                            <div> <a href="#"><img src="${detail.photo}"></a></div>
+                                            <div> <a href="#"><img class="product-img" src="${detail.photo}"></a></div>
                                         </div> <!-- slider-product.// -->
                                         <div class="img-small-wrap">
                                         </div> <!-- slider-nav.// -->
@@ -78,6 +45,7 @@
                                         </p> <!-- price-detail-wrap .// -->
                                         <dl class="item-property">
                                             <dt>Description</dt>
+                                            <dd><p>Tác giả: ${detail.book.author.name}</p></dd>
                                             <dd><p>
                                                     ${detail.description}
                                                 </p></dd>

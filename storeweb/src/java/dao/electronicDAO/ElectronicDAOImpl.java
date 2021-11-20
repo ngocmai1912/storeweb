@@ -41,7 +41,7 @@ public class ElectronicDAOImpl implements ElectronicDAO{
     @Override
     public List<ItemElectronic> getAllItemElectronic() {
         List<ItemElectronic> list = new ArrayList<>();
-        String sql = "select producer.*, itemelectronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
+        String sql = "select producer.*, itemelectronic.*,  electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
                     "producer.ID as idProducer, producer.Name as nameProducer\n" +
                     "from electronic, itemelectronic, producer\n" +
                     "where electronic.ID = itemelectronic.ElectronicID\n" +
