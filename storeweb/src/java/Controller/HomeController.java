@@ -22,6 +22,7 @@ import model.book.ItemBook;
 import model.clothes.ItemClothes;
 import model.electronic.ItemElectronic;
 import model.shoes.ItemShoes;
+import utils.CartUtils;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -51,7 +52,9 @@ public class HomeController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getServletPath();
+        CartUtils.request = req;
         fillAll(req, resp);
+        
     }
     
     
@@ -75,7 +78,5 @@ public class HomeController extends HttpServlet{
 
     }
    
-        
-    
 }
 
