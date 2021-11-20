@@ -41,7 +41,7 @@ public class ElectronicDAOImpl implements ElectronicDAO{
     @Override
     public List<ItemElectronic> getAllItemElectronic() {
         List<ItemElectronic> list = new ArrayList<>();
-        String sql = "select producer.*, itemelectronic.*,  electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
+        String sql = "select producer.*, itemelectronic.*, electronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
                     "producer.ID as idProducer, producer.Name as nameProducer\n" +
                     "from electronic, itemelectronic, producer\n" +
                     "where electronic.ID = itemelectronic.ElectronicID\n" +
@@ -70,7 +70,7 @@ public class ElectronicDAOImpl implements ElectronicDAO{
     @Override
     public List<ItemElectronic> searchItemByName(String name) {
         List<ItemElectronic> list = new ArrayList<>();
-        String sql = "select producer.*, itemelectronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
+        String sql = "select producer.*, itemelectronic.*, electronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
                     "producer.ID as idProducer, producer.Name as nameProducer\n" +
                     "from electronic, itemelectronic, producer\n" +
                     "where electronic.ID = itemelectronic.ElectronicID\n" +
@@ -99,7 +99,7 @@ public class ElectronicDAOImpl implements ElectronicDAO{
 
     @Override
     public ItemElectronic searchItemByID(int id) {
-         String sql = "select producer.*, itemelectronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
+         String sql = "select producer.*, itemelectronic.*, electronic.*,electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
                     "producer.ID as idProducer, producer.Name as nameProducer\n" +
                     "from electronic, itemelectronic, producer\n" +
                     "where electronic.ID = itemelectronic.ElectronicID\n" +

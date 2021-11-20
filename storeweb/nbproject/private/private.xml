@@ -5,9 +5,11 @@
         <group>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/dao/electronicDAO/ElectronicDAO.java</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/dao/electronicDAO/ElectronicDAOImpl.java</file>
+            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/web/ItemDetailClothes.jsp</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/dao/clothesDAO/ClothesDAOImpl.java</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/Controller/HomeController.java</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/model/clothes/Clothes.java</file>
+            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/web/ItemDetailShoes.jsp</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/web/Login.jsp</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/web/ItemDetailBook.jsp</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/utils/CartUtils.java</file>
@@ -15,6 +17,7 @@
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/dao/bookDAO/BookDAOImpl.java</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/dao/shoesDAO/ShoesDAOImpl.java</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/dao/bookDAO/BookDAO.java</file>
+            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/dao/DAO.java</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/model/electronic/Laptop.java</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/web/Navigation.jsp</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/model/electronic/Mobilephone.java</file>
@@ -22,8 +25,8 @@
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/web/Home.jsp</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/Controller/DetailController.java</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/web/Search.jsp</file>
+            <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/web/ItemDetailElectronic.jsp</file>
             <file>file:/C:/Users/hoaha/Desktop/PTIT/Nam_4/PTTK/BTL/storeweb/storeweb/src/java/Controller/CartControl.java</file>
-
         </group>
     </open-files>
 </project-private>

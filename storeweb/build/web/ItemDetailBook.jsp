@@ -85,7 +85,7 @@
 
                                         </div> <!-- row.// -->
                                         <hr>
-                                        <a href="cart?id=${detail.id}" class="btn btn-md btn-success text-uppercase">Mua ngay
+                                      <a href="cart?id=${detail.id}" class="btn btn-md btn-success text-uppercase">Mua ngay
                                             <% 
                                                int id1 = Integer.parseInt(request.getParameter("pid"));
                                                CartUtils.addBookToCart(id1); 
