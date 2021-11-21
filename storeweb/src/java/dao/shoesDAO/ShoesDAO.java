@@ -18,5 +18,6 @@ public interface ShoesDAO {
     public void deleteShoes(Shoes shoes);
     public List<ItemShoes> getAllItemShoes();
     public List<ItemShoes> searchItemByName(String name);
+    public ItemShoes getItemShoes(String txt);
     public ItemShoes searchItemByID(int id);
 }

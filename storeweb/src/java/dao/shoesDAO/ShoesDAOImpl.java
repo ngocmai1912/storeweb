@@ -4,13 +4,13 @@
  */
 package dao.shoesDAO;
 
-
+//import com.mysql.cj.xdevapi.Result;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.shoes.BrandShoes;
+import javax.xml.ws.spi.http.HttpExchange;
 import model.shoes.ItemShoes;
 import model.shoes.Shoes;
 
@@ -37,12 +37,10 @@ public class ShoesDAOImpl implements ShoesDAO{
 
     @Override
     public List<ItemShoes> getAllItemShoes() {
-        List<ItemShoes> list = new ArrayList<>();
-        String sql = "select shoes.*, itemshoes.*,brandshoes.*, shoes.ID as idShoes, itemshoes.ID as idItem, \n" +
-                    "brandshoes.ID as idBrand, brandshoes.Name as nameBrand, shoes.Name as nameShoes\n" +
-                    "from shoes, itemshoes, brandshoes\n" +
-                    "where shoes.ID = itemshoes.ShoesID\n" +
-                    "and shoes.BrandShoesID = brandshoes.ID;";
+         List<ItemShoes> list = new ArrayList<>();
+        String sql = "select shoes.*, itemshoes.*, shoes.ID as idShoes, itemshoes.ID as idItem\n" +
+                        "from shoes, itemshoes\n" +
+                        "where shoes.ID = itemshoes.ShoesID;";
         
         try {
             
@@ -50,11 +48,10 @@ public class ShoesDAOImpl implements ShoesDAO{
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                BrandShoes brandShoes = new BrandShoes(rs.getInt("idBrand"), rs.getString("nameBrand"), rs.getString("Address"));
                 Shoes shoes = new Shoes(rs.getInt("idShoes"), rs.getString("Name"), 
-                        rs.getFloat("Price"), rs.getInt("Size"), rs.getString("Color"), rs.getString("Material"), brandShoes);
+                        rs.getFloat("Price"), rs.getInt("Size"), rs.getString("Color"), rs.getString("Material"));
                 ItemShoes itemShoes = new ItemShoes(rs.getInt("idItem"), rs.getString("Barcode"),rs.getFloat("Discount"),rs.getFloat("Price"),
-                         rs.getString("Description"), rs.getString("Photo"), shoes);
+                         rs.getString("Description"), rs.getString("Photo"),rs.getInt("Amount"), shoes);
                 list.add(itemShoes);
             }
         } catch (SQLException e) {
@@ -66,11 +63,9 @@ public class ShoesDAOImpl implements ShoesDAO{
     @Override
     public List<ItemShoes> searchItemByName(String name) {
         List<ItemShoes> list = new ArrayList<>();
-        String sql = "select shoes.*, itemshoes.*,brandshoes.*, shoes.ID as idShoes, itemshoes.ID as idItem, \n" +
-                    "brandshoes.ID as idBrand, brandshoes.Name as nameBrand, shoes.Name as nameShoes\n" +
-                    "from shoes, itemshoes, brandshoes\n" +
-                    "where shoes.ID = itemshoes.ShoesID\n" +
-                    "and shoes.BrandShoesID = brandshoes.ID and itemeshoes.Name like ?;";
+        String sql = "select shoes.*, itemshoes.*, shoes.ID as idShoes, itemshoes.ID as idItem\n" +
+                        "from shoes, itemshoes\n" +
+                        "where shoes.ID = itemshoes.ShoesID and name like ?;";
         
         try {
             
@@ -79,11 +74,10 @@ public class ShoesDAOImpl implements ShoesDAO{
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                BrandShoes brandShoes = new BrandShoes(rs.getInt("idBrand"), rs.getString("nameBrand"), rs.getString("Address"));
                 Shoes shoes = new Shoes(rs.getInt("idShoes"), rs.getString("Name"), 
-                        rs.getFloat("Price"), rs.getInt("Size"), rs.getString("Color"), rs.getString("Material"), brandShoes);
+                        rs.getFloat("Price"), rs.getInt("Size"), rs.getString("Color"), rs.getString("Material"));
                 ItemShoes itemShoes = new ItemShoes(rs.getInt("idItem"), rs.getString("Barcode"),rs.getFloat("Discount"),rs.getFloat("Price"),
-                         rs.getString("Description"), rs.getString("Photo"), shoes);
+                         rs.getString("Description"), rs.getString("Photo"),rs.getInt("Amount"), shoes);
                 list.add(itemShoes);
             }
         } catch (SQLException e) {
@@ -94,11 +88,9 @@ public class ShoesDAOImpl implements ShoesDAO{
 
     @Override
     public ItemShoes searchItemByID(int id) {
-        String sql = "select shoes.*, itemshoes.*,brandshoes.*, shoes.ID as idShoes, itemshoes.ID as idItem, \n" +
-                    "brandshoes.ID as idBrand, brandshoes.Name as nameBrand, shoes.Name as nameShoes\n" +
-                    "from shoes, itemshoes, brandshoes\n" +
-                    "where shoes.ID = itemshoes.ShoesID\n" +
-                    "and shoes.BrandShoesID = brandshoes.ID and itemshoes.ID = ?;";
+        String sql = "select shoes.*, itemshoes.*, shoes.ID as idShoes, itemshoes.ID as idItem\n" +
+                        "from shoes, itemshoes\n" +
+                        "where shoes.ID = itemshoes.ShoesID and itemshoes.ID = ?;";
         
         try {
             
@@ -107,15 +99,36 @@ public class ShoesDAOImpl implements ShoesDAO{
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                BrandShoes brandShoes = new BrandShoes(rs.getInt("idBrand"), rs.getString("nameBrand"), rs.getString("Address"));
                 Shoes shoes = new Shoes(rs.getInt("idShoes"), rs.getString("Name"), 
-                        rs.getFloat("Price"), rs.getInt("Size"), rs.getString("Color"), rs.getString("Material"), brandShoes);
+                        rs.getFloat("Price"), rs.getInt("Size"), rs.getString("Color"), rs.getString("Material"));
                 ItemShoes itemShoes = new ItemShoes(rs.getInt("idItem"), rs.getString("Barcode"),rs.getFloat("Discount"),rs.getFloat("Price"),
-                         rs.getString("Description"), rs.getString("Photo"), shoes);
+                         rs.getString("Description"), rs.getString("Photo"),rs.getInt("Amount"), shoes);
                 return itemShoes;
             }
         } catch (SQLException e) {
                 e.printStackTrace();
+        }
+        return null;
+    }
+    @Override
+    public ItemShoes getItemShoes(String txt) {
+        String query = "select * from itemshoes where ID = ?";
+        //List<ItemElectronic> list = new ArrayList<>();
+        try {
+            PreparedStatement ps = dao.DAO.connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            ps.setString(1, txt);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new ItemShoes(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getFloat(3),
+                        rs.getFloat(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                1);
+            }
+        } catch (Exception e) {
         }
         return null;
     }

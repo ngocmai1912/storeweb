@@ -8,8 +8,6 @@ import java.util.List;
 import model.clothes.ItemClothes;
 import model.electronic.Electronic;
 import model.electronic.ItemElectronic;
-import model.electronic.Laptop;
-import model.electronic.Mobilephone;
 
 /**
  *
@@ -22,7 +20,6 @@ public interface ElectronicDAO {
     public void deleteElectronic(Electronic electronic);
     public List<ItemElectronic> getAllItemElectronic();
     public List<ItemElectronic> searchItemByName(String name);
+    public ItemElectronic getItemElectronic(String txt);
     public ItemElectronic searchItemByID(int id);
-    public Laptop getLaptopByID(int id);
-    public Mobilephone getMobilephoneByID(int id);
 }

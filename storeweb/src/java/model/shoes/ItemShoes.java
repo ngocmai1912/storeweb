@@ -17,20 +17,50 @@ public class ItemShoes implements Serializable{
     private float price;
     private String description;
     private String photo;
+    private int amount;
     private Shoes shoes;
 
     public ItemShoes() {
     }
 
-    public ItemShoes(int id, String barcode, float discount, float price, String description, String photo, Shoes shoes) {
+    public ItemShoes(int id, String barcode, float discount, float price, String description, String photo) {
         this.id = id;
         this.barcode = barcode;
         this.discount = discount;
         this.price = price;
         this.description = description;
         this.photo = photo;
+    }
+
+    public ItemShoes(int id, String barcode, float discount, float price, String description, String photo, int amount) {
+        this.id = id;
+        this.barcode = barcode;
+        this.discount = discount;
+        this.price = price;
+        this.description = description;
+        this.photo = photo;
+        this.amount = amount;
+    }
+
+    public ItemShoes(int id, String barcode, float discount, float price, String description, String photo, int amount, Shoes shoes) {
+        this.id = id;
+        this.barcode = barcode;
+        this.discount = discount;
+        this.price = price;
+        this.description = description;
+        this.photo = photo;
+        this.amount = amount;
         this.shoes = shoes;
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+    
 
     public int getId() {
         return id;

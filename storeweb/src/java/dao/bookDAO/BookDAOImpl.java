@@ -13,8 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.book.Author;
-import model.book.Publisher;
+import model.clothes.ItemClothes;
 
 /**
  *
@@ -29,28 +28,20 @@ public class BookDAOImpl implements BookDAO {
     @Override
     public List<ItemBook> getAllItemBook() {
         List<ItemBook> list = new ArrayList<>();
-        String sql = "select  author.*, itembook.*, book.*, \n" +
-                    "itembook.ID as idItem, book.ID as idBook, \n" +
-                    "publisher.ID as idPublisher, author.ID as idAuthor,\n" +
-                    "publisher.Name as namePublisher, author.Name as nameAuthor,\n" +
-                    "publisher.Address as addressPublisher, author.Address as addressAuthor\n" +
-                    "from itembook, book, author, publisher\n" +
-                    "where itembook.BookID = book.ID\n" +
-                    "and book.AuthorID = author.ID\n" +
-                    "and book.PublisherID = publisher.ID;";
+        String sql = "select itembook.*, book.*, itembook.ID as idItem, book.ID as idBook from itembook, book\n" +
+                    "where itembook.BookID = book.ID";
         
         try {
             
             PreparedStatement ps = DAO.connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
+
             while (rs.next()) {
-                Author author = new Author(rs.getInt("idAuthor"), rs.getString("nameAuthor"), rs.getString("Biography"), rs.getString("Email"), rs.getString("addressAuthor"));
-                Publisher publisher = new Publisher(rs.getInt("idPublisher"), rs.getString("namePublisher"), rs.getString("addressPublisher"));
                 Book book = new Book(rs.getInt("idBook"), rs.getString("ISBN"), rs.getString("Titile"), 
                         rs.getString("Summary"), rs.getDate("NumberOfDate"), rs.getString("Language"), 
-                        rs.getDate("PublicationDate"), author, publisher);
+                        rs.getDate("PublicationDate"));
                 ItemBook itemBook = new ItemBook(rs.getInt("idItem"), rs.getString("Barcode"), rs.getFloat("Price"),
-                        rs.getFloat("Discount"), rs.getString("Description"), rs.getString("Photo"), book);
+                        rs.getFloat("Discount"), rs.getString("Description"), rs.getString("Photo"),rs.getInt("Amount"), book);
                 list.add(itemBook);
             }
         } catch (SQLException e) {
@@ -61,30 +52,22 @@ public class BookDAOImpl implements BookDAO {
 
     @Override
     public List<ItemBook> searchItemByTitle(String title) {
-        List<ItemBook> list = new ArrayList<>();
-        String sql = "select  author.*, itembook.*, book.*, \n" +
-                    "itembook.ID as idItem, book.ID as idBook, \n" +
-                    "publisher.ID as idPublisher, author.ID as idAuthor,\n" +
-                    "publisher.Name as namePublisher, author.Name as nameAuthor,\n" +
-                    "publisher.Address as addressPublisher, author.Address as addressAuthor\n" +
-                    "from itembook, book, author, publisher\n" +
-                    "where itembook.BookID = book.ID\n" +
-                    "and book.AuthorID = author.ID\n" +
-                    "and book.PublisherID = publisher.ID and titile like ?;";
+         List<ItemBook> list = new ArrayList<>();
+        String sql = "select itembook.*, book.*, itembook.ID as idItem, book.ID as idBook from itembook, book\n" +
+                    "where itembook.BookID = book.ID and titile like ?;";
         
         try {
             
             PreparedStatement ps = DAO.connection.prepareStatement(sql);
-            ps.setString(1, "%" + title + "%");
+             ps.setString(1, "%" + title + "%");
             ResultSet rs = ps.executeQuery();
+
             while (rs.next()) {
-                Author author = new Author(rs.getInt("idAuthor"), rs.getString("nameAuthor"), rs.getString("Biography"), rs.getString("Email"), rs.getString("addressAuthor"));
-                Publisher publisher = new Publisher(rs.getInt("idPublisher"), rs.getString("namePublisher"), rs.getString("addressPublisher"));
                 Book book = new Book(rs.getInt("idBook"), rs.getString("ISBN"), rs.getString("Titile"), 
                         rs.getString("Summary"), rs.getDate("NumberOfDate"), rs.getString("Language"), 
-                        rs.getDate("PublicationDate"), author, publisher);
+                        rs.getDate("PublicationDate"));
                 ItemBook itemBook = new ItemBook(rs.getInt("idItem"), rs.getString("Barcode"), rs.getFloat("Price"),
-                        rs.getFloat("Discount"), rs.getString("Description"), rs.getString("Photo"), book);
+                        rs.getFloat("Discount"), rs.getString("Description"), rs.getString("Photo"),rs.getInt("Amount"), book);
                 list.add(itemBook);
             }
         } catch (SQLException e) {
@@ -95,28 +78,21 @@ public class BookDAOImpl implements BookDAO {
 
     @Override
     public ItemBook searchItemByID(int id) {
-        String sql = "select  author.*, itembook.*, book.*, \n" +
-                    "itembook.ID as idItem, book.ID as idBook, \n" +
-                    "publisher.ID as idPublisher, author.ID as idAuthor,\n" +
-                    "publisher.Name as namePublisher, author.Name as nameAuthor,\n" +
-                    "publisher.Address as addressPublisher, author.Address as addressAuthor\n" +
-                    "from itembook, book, author, publisher\n" +
-                    "where itembook.BookID = book.ID\n" +
-                    "and book.AuthorID = author.ID\n" +
-                    "and book.PublisherID = publisher.ID and itembook.ID = ?";
+        String sql = "select itembook.*, book.*, itembook.ID as idItem, book.ID as idBook from itembook, book\n" +
+                    "where itembook.BookID = book.ID and itembook.ID = ?;";
         
         try {
+            
             PreparedStatement ps = DAO.connection.prepareStatement(sql);
-            ps.setInt(1, id);
+             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
+
             while (rs.next()) {
-                Author author = new Author(rs.getInt("idAuthor"), rs.getString("nameAuthor"), rs.getString("Biography"), rs.getString("Email"), rs.getString("addressAuthor"));
-                Publisher publisher = new Publisher(rs.getInt("idPublisher"), rs.getString("namePublisher"), rs.getString("addressPublisher"));
                 Book book = new Book(rs.getInt("idBook"), rs.getString("ISBN"), rs.getString("Titile"), 
                         rs.getString("Summary"), rs.getDate("NumberOfDate"), rs.getString("Language"), 
-                        rs.getDate("PublicationDate"), author, publisher);
+                        rs.getDate("PublicationDate"));
                 ItemBook itemBook = new ItemBook(rs.getInt("idItem"), rs.getString("Barcode"), rs.getFloat("Price"),
-                        rs.getFloat("Discount"), rs.getString("Description"), rs.getString("Photo"), book);
+                        rs.getFloat("Discount"), rs.getString("Description"), rs.getString("Photo"),rs.getInt("Amount"), book);
                 return itemBook;
             }
         } catch (SQLException e) {
@@ -139,7 +115,28 @@ public class BookDAOImpl implements BookDAO {
     public void deleteBook(Book book) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+    @Override
+    public ItemBook getItemBook(String txt) {
+        String query = "select * from itembook where ID = ?";
+        //List<ItemElectronic> list = new ArrayList<>();
+        try {
+            PreparedStatement ps = dao.DAO.connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            ps.setString(1, txt);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new ItemBook(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getFloat(3),
+                        rs.getFloat(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                1);
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
     
    
 }

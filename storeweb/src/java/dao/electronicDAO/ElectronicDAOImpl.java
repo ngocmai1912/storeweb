@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import model.electronic.Electronic;
 import model.electronic.ItemElectronic;
-import model.electronic.Laptop;
-import model.electronic.Mobilephone;
-import model.electronic.Producer;
 import model.shoes.ItemShoes;
 import model.shoes.Shoes;
 
@@ -41,24 +38,21 @@ public class ElectronicDAOImpl implements ElectronicDAO{
     @Override
     public List<ItemElectronic> getAllItemElectronic() {
         List<ItemElectronic> list = new ArrayList<>();
-        String sql = "select producer.*, itemelectronic.*, electronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
-                    "producer.ID as idProducer, producer.Name as nameProducer\n" +
-                    "from electronic, itemelectronic, producer\n" +
-                    "where electronic.ID = itemelectronic.ElectronicID\n" +
-                    "and electronic.ProducerID = producer.ID;";
+        String sql = "select electronic.*, itemelectronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem\n" +
+                    "from electronic, itemelectronic\n" +
+                    "where electronic.ID = itemelectronic.ElectronicID;";
         
         try {
             
             PreparedStatement ps = dao.DAO.connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Producer producer = new Producer(rs.getInt("idProducer"), rs.getString("nameProducer"), rs.getString("Address"));
                 Electronic electronic = new Electronic(rs.getInt("idElectronic"), rs.getString("Name"), 
                         rs.getFloat("Price"), rs.getString("Type"), rs.getInt("Ram"), rs.getString("Color"),
                         rs.getFloat("ScreenSize"), rs.getString("ScreenType"), rs.getString("OperatingSystem"),
-                        rs.getDate("ReleaseDate"), rs.getInt("Battery"),rs.getInt("Charger"), producer);
+                        rs.getDate("ReleaseDate"), rs.getInt("Battery"),rs.getInt("Charger"));
                 ItemElectronic itemElectronic = new ItemElectronic(rs.getInt("idItem"), rs.getString("Barcode"),rs.getFloat("Discount"),rs.getFloat("Price"),
-                         rs.getString("Description"), rs.getString("Photo"), electronic);
+                         rs.getString("Description"), rs.getString("Photo"),rs.getInt("Amount"), electronic);
                 list.add(itemElectronic);
             }
         } catch (SQLException e) {
@@ -70,11 +64,9 @@ public class ElectronicDAOImpl implements ElectronicDAO{
     @Override
     public List<ItemElectronic> searchItemByName(String name) {
         List<ItemElectronic> list = new ArrayList<>();
-        String sql = "select producer.*, itemelectronic.*, electronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
-                    "producer.ID as idProducer, producer.Name as nameProducer\n" +
-                    "from electronic, itemelectronic, producer\n" +
-                    "where electronic.ID = itemelectronic.ElectronicID\n" +
-                    "and electronic.ProducerID = producer.ID and itemelectronic.Name like ?;";
+        String sql = "select electronic.*, itemelectronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem\n" +
+                    "from electronic, itemelectronic\n" +
+                    "where electronic.ID = itemelectronic.ElectronicID and name like ?;";
         
         try {
             
@@ -82,13 +74,12 @@ public class ElectronicDAOImpl implements ElectronicDAO{
             ps.setString(1, "%" + name + "%");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Producer producer = new Producer(rs.getInt("idProducer"), rs.getString("nameProducer"), rs.getString("Address"));
                 Electronic electronic = new Electronic(rs.getInt("idElectronic"), rs.getString("Name"), 
                         rs.getFloat("Price"), rs.getString("Type"), rs.getInt("Ram"), rs.getString("Color"),
                         rs.getFloat("ScreenSize"), rs.getString("ScreenType"), rs.getString("OperatingSystem"),
-                        rs.getDate("ReleaseDate"), rs.getInt("Battery"),rs.getInt("Charger"), producer);
+                        rs.getDate("ReleaseDate"), rs.getInt("Battery"),rs.getInt("Charger"));
                 ItemElectronic itemElectronic = new ItemElectronic(rs.getInt("idItem"), rs.getString("Barcode"),rs.getFloat("Discount"),rs.getFloat("Price"),
-                         rs.getString("Description"), rs.getString("Photo"), electronic);
+                         rs.getString("Description"), rs.getString("Photo"),rs.getInt("Amount"), electronic);
                 list.add(itemElectronic);
             }
         } catch (SQLException e) {
@@ -99,11 +90,9 @@ public class ElectronicDAOImpl implements ElectronicDAO{
 
     @Override
     public ItemElectronic searchItemByID(int id) {
-         String sql = "select producer.*, itemelectronic.*, electronic.*,electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
-                    "producer.ID as idProducer, producer.Name as nameProducer\n" +
-                    "from electronic, itemelectronic, producer\n" +
-                    "where electronic.ID = itemelectronic.ElectronicID\n" +
-                    "and electronic.ProducerID = producer.ID and itemelectronic.ID = ?;";
+        String sql = "select electronic.*, itemelectronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem\n" +
+                    "from electronic, itemelectronic\n" +
+                    "where electronic.ID = itemelectronic.ElectronicID and itemelectronic.ID = ?;";
         
         try {
             
@@ -111,13 +100,12 @@ public class ElectronicDAOImpl implements ElectronicDAO{
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Producer producer = new Producer(rs.getInt("idProducer"), rs.getString("nameProducer"), rs.getString("Address"));
                 Electronic electronic = new Electronic(rs.getInt("idElectronic"), rs.getString("Name"), 
                         rs.getFloat("Price"), rs.getString("Type"), rs.getInt("Ram"), rs.getString("Color"),
                         rs.getFloat("ScreenSize"), rs.getString("ScreenType"), rs.getString("OperatingSystem"),
-                        rs.getDate("ReleaseDate"), rs.getInt("Battery"),rs.getInt("Charger"), producer);
+                        rs.getDate("ReleaseDate"), rs.getInt("Battery"),rs.getInt("Charger"));
                 ItemElectronic itemElectronic = new ItemElectronic(rs.getInt("idItem"), rs.getString("Barcode"),rs.getFloat("Discount"),rs.getFloat("Price"),
-                         rs.getString("Description"), rs.getString("Photo"), electronic);
+                         rs.getString("Description"), rs.getString("Photo"),rs.getInt("Amount"), electronic);
                 return itemElectronic;
             }
         } catch (SQLException e) {
@@ -125,49 +113,26 @@ public class ElectronicDAOImpl implements ElectronicDAO{
         }
         return null;
     }
-
     @Override
-    public Laptop getLaptopByID(int id) {
-        String sql = "select laptop.*, itemelectronic.*\n" +
-                    "from laptop, electronic, itemelectronic\n" +
-                    "where laptop.ElectronicID = electronic.ID\n" +
-                    "and electronic.ID = ?;";
+    public ItemElectronic getItemElectronic(String txt) {
+        String query = "select * from itemelectronic where ID = ?";
+        //List<ItemElectronic> list = new ArrayList<>();
         try {
-            
-            PreparedStatement ps = dao.DAO.connection.prepareStatement(sql);
-            ps.setInt(1, id);
+            PreparedStatement ps = dao.DAO.connection.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
+            ps.setString(1, txt);
+            rs = ps.executeQuery();
             while (rs.next()) {
-                Laptop laptop = new Laptop();
-                // handle
-                return laptop;
+                return new ItemElectronic(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getFloat(3),
+                        rs.getFloat(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                1);
             }
-        } catch (SQLException e) {
-                e.printStackTrace();
+        } catch (Exception e) {
         }
         return null;
     }
-
-    @Override
-    public Mobilephone getMobilephoneByID(int id) {
-         String sql = "select mobilephone.*, itemelectronic.*\n" +
-                    "from mobilephone, electronic, itemelectronic\n" +
-                    "where mobilephone.ElectronicID = electronic.ID\n" +
-                    "and electronic.ID = ?;";
-        try {
-            
-            PreparedStatement ps = dao.DAO.connection.prepareStatement(sql);
-            ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Mobilephone mb = new Mobilephone();
-               //handle
-                return mb;
-            }
-        } catch (SQLException e) {
-                e.printStackTrace();
-        }
-        return null;
-    }
-    
 }

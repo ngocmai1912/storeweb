@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author trinh
  */
 @WebServlet(name = "RemoveProductControl", urlPatterns = {"/remove"})
-public class RemoveProductControl extends HttpServlet {
+public class RemoveItemControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

@@ -17,20 +17,50 @@ public class ItemElectronic implements Serializable{
     private float price;
     private String description;
     private String photo;
+    private int amount;
     private Electronic electronic;
 
     public ItemElectronic() {
     }
 
-    public ItemElectronic(int id, String barcode, float discount, float price, String description, String photo, Electronic electronic) {
+    public ItemElectronic(int id, String barcode, float discount, float price, String description, String photo) {
         this.id = id;
         this.barcode = barcode;
         this.discount = discount;
         this.price = price;
         this.description = description;
         this.photo = photo;
+    }
+
+    public ItemElectronic(int id, String barcode, float discount, float price, String description, String photo, int amount) {
+        this.id = id;
+        this.barcode = barcode;
+        this.discount = discount;
+        this.price = price;
+        this.description = description;
+        this.photo = photo;
+        this.amount = amount;
+    }
+
+    public ItemElectronic(int id, String barcode, float discount, float price, String description, String photo, int amount, Electronic electronic) {
+        this.id = id;
+        this.barcode = barcode;
+        this.discount = discount;
+        this.price = price;
+        this.description = description;
+        this.photo = photo;
+        this.amount = amount;
         this.electronic = electronic;
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+    
 
     public int getId() {
         return id;

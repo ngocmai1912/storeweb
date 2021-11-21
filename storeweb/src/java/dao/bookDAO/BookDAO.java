@@ -19,5 +19,6 @@ public interface BookDAO {
     public void deleteBook(Book book);
     public List<ItemBook> getAllItemBook();
     public List<ItemBook> searchItemByTitle(String title);
+    public ItemBook getItemBook(String txt);
     public ItemBook searchItemByID(int id);
 }

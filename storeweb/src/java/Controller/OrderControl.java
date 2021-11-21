@@ -5,6 +5,10 @@
  */
 package Controller;
 
+import dao.bookDAO.BookDAOImpl;
+import dao.clothesDAO.ClothesDAOImpl;
+import dao.electronicDAO.ElectronicDAOImpl;
+import dao.shoesDAO.ShoesDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -15,6 +19,10 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.book.ItemBook;
+import model.clothes.ItemClothes;
+import model.electronic.ItemElectronic;
+import model.shoes.ItemShoes;
 
 /**
  *
@@ -27,31 +35,94 @@ public class OrderControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Cookie arr[] = request.getCookies();
-//        List<Product> list = new ArrayList<>();
-//        ProductDAO pdao = new ProductDAO();
-//        for (Cookie o : arr) {
-//            if (o.getName().equals("id")) {
-//                String txt[] = o.getValue().split(",");
-//                for (String s : txt) {
-//                    list.add(pdao.getProduct(s));
-//                }
-//            }
-//        }
-//        for (int i = 0; i < list.size(); i++) {
-//            int count = 1;
-//            for (int j = i+1; j < list.size(); j++) {
-//                if(list.get(i).getId() == list.get(j).getId()){
-//                    count++;
-//                    list.remove(j);
-//                    j--;
-//                    list.get(i).setAmount(count);
-//                }
-//            }
-//        }
-//        for (Cookie o : arr) {
-//            o.setMaxAge(0);
-//            response.addCookie(o);
-//        }
+        List<ItemBook> list1 = new ArrayList<>();
+        BookDAOImpl bdao = new BookDAOImpl();
+        for (Cookie o : arr) {
+            if (o.getName().equals("id")) {
+                String txt[] = o.getValue().split(",");
+                for (String s : txt) {
+                    list1.add(bdao.getItemBook(s));
+                }
+            }
+        }
+        for (int i = 0; i < list1.size(); i++) {
+            int count = 1;
+            for (int j = i+1; j < list1.size(); j++) {
+                if(list1.get(i).getId() == list1.get(j).getId()){
+                    count++;
+                    list1.remove(j);
+                    j--;
+                    list1.get(i).setAmount(count);
+                }
+            }
+        }
+        List<ItemElectronic> list2 = new ArrayList<>();
+        ElectronicDAOImpl edao = new ElectronicDAOImpl();
+        for (Cookie o : arr) {
+            if (o.getName().equals("id")) {
+                String txt[] = o.getValue().split(",");
+                for (String s : txt) {
+                    list2.add(edao.getItemElectronic(s));
+                }
+            }
+        }
+        for (int i = 0; i < list2.size(); i++) {
+            int count = 1;
+            for (int j = i+1; j < list2.size(); j++) {
+                if(list2.get(i).getId() == list2.get(j).getId()){
+                    count++;
+                    list2.remove(j);
+                    j--;
+                    list2.get(i).setAmount(count);
+                }
+            }
+        }
+        List<ItemShoes> list3 = new ArrayList<>();
+        ShoesDAOImpl sdao = new ShoesDAOImpl();
+        for (Cookie o : arr) {
+            if (o.getName().equals("id")) {
+                String txt[] = o.getValue().split(",");
+                for (String s : txt) {
+                    list3.add(sdao.getItemShoes(s));
+                }
+            }
+        }
+        for (int i = 0; i < list3.size(); i++) {
+            int count = 1;
+            for (int j = i+1; j < list3.size(); j++) {
+                if(list3.get(i).getId() == list3.get(j).getId()){
+                    count++;
+                    list3.remove(j);
+                    j--;
+                    list3.get(i).setAmount(count);
+                }
+            }
+        }
+        List<ItemClothes> list4 = new ArrayList<>();
+        ClothesDAOImpl cdao = new ClothesDAOImpl();
+        for (Cookie o : arr) {
+            if (o.getName().equals("id")) {
+                String txt[] = o.getValue().split(",");
+                for (String s : txt) {
+                    list4.add(cdao.getItemClothes(s));
+                }
+            }
+        }
+        for (int i = 0; i < list4.size(); i++) {
+            int count = 1;
+            for (int j = i+1; j < list4.size(); j++) {
+                if(list4.get(i).getId() == list4.get(j).getId()){
+                    count++;
+                    list4.remove(j);
+                    j--;
+                    list4.get(i).setAmount(count);
+                }
+            }
+        }
+        for (Cookie o : arr) {
+            o.setMaxAge(0);
+            response.addCookie(o);
+        }
         response.sendRedirect("Home.jsp");
     }
 
