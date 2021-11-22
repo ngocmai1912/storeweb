@@ -68,6 +68,7 @@
           </div>
           <li class=" d-flex justify-content-between">
             <h6 class="my-0">Tổng tiền hàng</h6>
+<<<<<<< Upstream, based on origin/developer
           <span class="text-muted">${total}</span>
         </li>
             <li class=" d-flex justify-content-between">
@@ -108,3 +109,45 @@
     </div>
   </div>
 </body>
+=======
+          <span class="text-muted">25.000</span>
+        </li>
+            <li class=" d-flex justify-content-between">
+                  <h6 class="my-0">Phí vận chuyển</h6>
+                <span class="text-muted">25.000</span>
+              </li>
+              <li class=" d-flex justify-content-between lh-condensed">
+              <h6 class="my-1 text-info">Tổng tiền</h6>
+             <!-- <script language="JavaScript"> 
+              let a = 20;
+              let b = 30;
+              
+              // Tính tổng
+              let tong = a + b;
+              
+              document.write("Tổng hai số là: " + tong);
+            </script> -->
+              <span class="text-info">$12</span>
+            </li>
+            <div class="d-block my-3">
+                <p>Hình thức thanh toán</p>
+                <div class="custom-control custom-radio">
+                  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                  <label class="custom-control-label" for="credit">Credit</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                  <label class="custom-control-label" for="debit">Cash</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                  <label class="custom-control-label" for="paypal">Check</label>
+                </div>
+              </div>
+                                         <button type="button" class="btn btn-danger">Thanh toán</button>
+       
+      </div>
+    </div>
+  </div>
+    </body>
+>>>>>>> ad2e40b them checkout

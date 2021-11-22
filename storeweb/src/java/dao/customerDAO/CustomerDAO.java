@@ -18,5 +18,6 @@ public interface CustomerDAO {
     public void deleteCustomer(Customer customer);
     public void viewOrder(Order order);
     public Account checkLogin(String username, String password);
-    public void signUp(Customer customer);
+    public void signUp(String username, String password);
+    public Account checkAccountExist(String user);
 }
