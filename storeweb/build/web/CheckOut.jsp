@@ -14,46 +14,156 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style><%@include file="css/CheckOut.css"%></style>
     <!------ Include the above in your HEAD tag ---------->
  </head>   
     <body>
+  <jsp:include page="Navigation.jsp"></jsp:include>
 <div id="contact" class="container-fluid bg-grey">
-    <h2 class="jumbotron text-center">CheckOut</h2>
+    <h2 class="jumbotron text-center text-white back">CheckOut</h2>
     <div class="row">
-      <div class="col-sm-8 ">
-             <p>Địa chỉ*</p>
+      <div class="col-sm-7 "><br><br><br><br>
+          <form action="cart" method="post">
+          <h3 class="text-muted"> Địa chỉ nhận hàng</h3><br>
+             <p>Địa chỉ*</p><br>
             <input class="form-control" id="name" name="name" placeholder="Số nhà, ngõ..." type="text" required>
-            <br><input class="form-control" id="name" name="name" placeholder="Toà nhà, số phòng(chung cư...)" type="text" required>
-            <p>Tỉnh, thành phố*</p>
-            <input class="form-control"name="tỉnh, thành phố" type="tỉnh" required>
-            <p>Quận, huyện*</p>
-            <input class="form-control"  name="tỉnh, thành phố" type="tỉnh" required>
-            <p>Phường, xã*</p>
-            <input class="form-control" name="tỉnh, thành phố" type="tỉnh" required>
+            <br><input class="form-control" id="name" name="name" placeholder="Toà nhà, số phòng(chung cư...)" type="text" required><br>
+            <p>Tỉnh, thành phố*</p><br>
+            <input class="form-control"name="tỉnh, thành phố" type="tỉnh" required><br>
+            <p>Quận, huyện*</p><br>
+            <input class="form-control"  name="tỉnh, thành phố" type="tỉnh" required><br>
+            <p>Phường, xã*</p><br>
+            <input class="form-control" name="tỉnh, thành phố" type="tỉnh" required><br>
             <div class="row">
                 <div class="col-sm-6">
-                    <p>SĐT*</p>
-                    <input name="Email" type="tỉnh" >
+                    <p>SĐT*</p><br>
+                    <input name="Email" type="tỉnh" ><br>
                 </div>
                 <div class="col-sm-6">
-                    <p>Email*</p>
-                    <input name="email" placeholder="Email"  type="email" >
+                    <p>Email*</p><br>
+                    <input name="email" placeholder="Email"  type="email" ><br>
                 </div>
             </div>
+            </form>
       </div>
-      <div class="col-sm-3 jumbotron">
-        <h3 class=" text-center">Đơn Của Bạn</h3>              
-                        <!-- <div class="container">
-                            <div id="login-row" class="row justify-content-center align-items-center">
-                                <div id="login-column" class="col-md-6">
-                                    <div id="login-box" class="col-md-12">
-                                        <form id="login-form" class="form" action="" method="post">
+           <div class="col-sm-5 jumbotron front">
+               <h3 class=" text-center">Đơn Của Bạn</h3>
+       
+        <div class="shopping-cart">
+            <div class="px-4 px-lg-0">
+
+                <div class="pb-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+                                <!-- Shopping cart table -->
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="p-2 px-3 text-uppercase">Sản Phẩm</div>
+                                                </th>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="py-2 text-uppercase">Đơn Giá</div>
+                                                </th>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="py-2 text-uppercase">Số Lượng</div>
+                                                </th>
+             
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach items="${listBook}" var="o">
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="p-2">
+                                                            <img src="${o.photo}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                            <div class="ml-3 d-inline-block align-middle">
+                                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">${o.book.title}</a></h5><span class="text-muted font-weight-normal font-italic"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <td class="align-middle"><strong>${o.price}</strong></td>
+                                                   <td class="align-middle">
+                                                        <a href="sub?id=${o.id}"></a> <strong>${o.amount}</strong>
+                                                        <a href="cart?id=${o.id}"></a>
+                                                    </td>
+                                                           
+                                                </tr> 
+                                            </c:forEach>
+                                            <c:forEach items="${listClothes}" var="o">
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="p-2">
+                                                            <img src="${o.photo}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                            <div class="ml-3 d-inline-block align-middle">
+                                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">${o.clothes.name}</a></h5><span class="text-muted font-weight-normal font-italic"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <td class="align-middle"><strong>${o.price}</strong></td>
+                                                    <td class="align-middle">
+                                                        <a href="sub?id=${o.id}"></a> <strong>${o.amount}</strong>
+                                                        <a href="cart?id=${o.id}"></a>
+                                                    </td>
+                                                   
+                                                </tr> 
+                                            </c:forEach>
+                                                <c:forEach items="${listElectronic}" var="o">
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="p-2">
+                                                            <img src="${o.photo}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                            <div class="ml-3 d-inline-block align-middle">
+                                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">${o.electronic.name}</a></h5><span class="text-muted font-weight-normal font-italic"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <td class="align-middle"><strong>${o.price}</strong></td>
+                                                    <td class="align-middle">
+                                                        
+                                                        <a href="cart?id=${o.id}"></a>
+                                                    </td>
+                                                          
+                                                </tr> 
+                                            </c:forEach>
+                                                <c:forEach items="${listShoes}" var="o">
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="p-2">
+                                                            <img src="${o.photo}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                            <div class="ml-3 d-inline-block align-middle">
+                                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">${o.shoes.name}</a></h5><span class="text-muted font-weight-normal font-italic"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <td class="align-middle"><strong>${o.price}</strong></td>
+                                                    <td class="align-middle">
+                                                        
+                                                        <a href="cart?id=${o.id}"></a>
+                                                    </td>
+                                                            
+                                                </tr> 
+                                            </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- End -->
+                            </div>
+                        </div>
+                                    <ul class="list-unstyled mb-4">
                                         
-                                            <button type="submit"class="btn btn-info btn-md"><a class="text-white text-uppercase" href="back.html">Back</a></button>
-                                            <button type="submit"class="btn btn-info btn-md pull-right"><a class="text-white text-uppercase" href="index.html">Usename</a></button>
-                                         <button type="submit"s="btn btn-info btn-md"><a class="right" href="index.html">usename</a></button>-->
-            <!-- <br><br><br> --> 
-           <p>Đơn vị vận chuyển</p> 
+                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>${total} ₫</strong></li>
+                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Phí vận chuyển</strong><strong>25.000 ₫</strong></li>
+                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
+                                            <h5 class="font-weight-bold">${sum} ₫</h5>
+                                        </li>
+                                    </ul>
+                                                
+            <p>Đơn vị vận chuyển</p> 
+            <p class="text-warning"> [Bạn có thể theo dõi đơn hàng khi chọn một trong các đơn vị vận chuyển]</p>
            <div class="d-block my-3">
             <div class="custom-control custom-radio ">
               <input id="credt" name="payment" type="radio" class="custom-control-input" checked required>
@@ -65,30 +175,10 @@
               <label class="custom-control-label" for="debt">Express   </label>
               <!-- <span class="text-muted">   30.000</span> -->
             </div>
-          </div>
-          <li class=" d-flex justify-content-between">
-            <h6 class="my-0">Tổng tiền hàng</h6>
-          <span class="text-muted">${total}</span>
-        </li>
-            <li class=" d-flex justify-content-between">
-                  <h6 class="my-0">Phí vận chuyển</h6>
-                <span class="text-muted">25.000</span>
-              </li>
-              <li class=" d-flex justify-content-between lh-condensed">
-              <h6 class="my-1 text-info">Tổng tiền</h6>
-             <!-- <script language="JavaScript"> 
-              let a = 20;
-              let b = 30;
-              
-              // Tính tổng
-              let tong = a + b;
-              
-              document.write("Tổng hai số là: " + tong);
-            </script> -->
-              <span class="text-info">$12</span>
-            </li>
+          </div>                            
             <div class="d-block my-3">
                 <p>Hình thức thanh toán</p>
+                <p class="text-warning">[Khuyến khích thanh toán trả trước và hạn chế tiếp xúc gần để phòng dịch Covid-19]</p>
                 <div class="custom-control custom-radio">
                   <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
                   <label class="custom-control-label" for="credit">Credit</label>
@@ -102,9 +192,9 @@
                   <label class="custom-control-label" for="paypal">Check</label>
                 </div>
               </div>
-                                         <button type="button" class="btn btn-danger">Thanh toán</button>
+                   <a href="order" class="btn btn-danger rounded-pill py-2 btn-block">Thanh Toán</a>                    
        
       </div>
     </div>
   </div>
-</body>
+    </body>

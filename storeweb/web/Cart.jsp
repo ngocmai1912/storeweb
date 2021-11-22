@@ -147,7 +147,7 @@
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
                                             <h5 class="font-weight-bold">${sum} ₫</h5>
                                         </li>
-                                    </ul><a href="order?total=${total}" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
+                                    </ul><a href="CheckOut.jsp?total=${total}" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
                                 </div>
                             </div>
                         </div>

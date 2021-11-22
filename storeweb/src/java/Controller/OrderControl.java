@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import dao.customerDAO.CustomerDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.customer.Account;
 import utils.CartUtils;
 
 /**
@@ -33,7 +35,8 @@ public class OrderControl extends HttpServlet {
         requestDispatcher.forward(req, resp);
         
     }
-    
-
+ 
+        
+  
 
 }

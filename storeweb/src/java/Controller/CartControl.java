@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Controller;
-
+import dao.orderDAO.OrderDAOImpl;
 import dao.bookDAO.BookDAOImpl;
 import dao.clothesDAO.ClothesDAOImpl;
 import dao.electronicDAO.ElectronicDAOImpl;
@@ -35,7 +35,7 @@ import static utils.CartUtils.listElectronic;
  * @author trinh
  */
 
-@WebServlet("/cart")
+@WebServlet(name = "CartControl", urlPatterns = {"/cart"})
 public class CartControl extends HttpServlet {
     
     @Override
@@ -49,6 +49,9 @@ public class CartControl extends HttpServlet {
             listC.add(itemClothes);
             total += (itemClothes.getPrice()*listClothes.get(key));
         }
+//        OrderDAOImpl dao=new OrderDAOImpl();
+//         for(int i=0; i<listC.size();i++)
+//             dao.sign(listC.get(i));
          
         List<ItemBook> listB = new ArrayList<>();
         Set<Integer> set2 = listBook.keySet();
@@ -85,6 +88,9 @@ public class CartControl extends HttpServlet {
         
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("Cart.jsp");
         requestDispatcher.forward(request, response);
+        String sum= request.getParameter("sum");
+        OrderDAOImpl dao= new OrderDAOImpl();
+        dao.sign(sum);
     }
 
    
