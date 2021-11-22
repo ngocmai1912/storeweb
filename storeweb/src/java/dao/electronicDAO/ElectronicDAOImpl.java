@@ -42,7 +42,7 @@ public class ElectronicDAOImpl implements ElectronicDAO{
     public List<ItemElectronic> getAllItemElectronic() {
         List<ItemElectronic> list = new ArrayList<>();
         String sql = "select producer.*, itemelectronic.*, electronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
-                    "producer.ID as idProducer, producer.Name as nameProducer\n" +
+                    "producer.ID as idProducer, producer.Name as nameProducer, electronic.Name as nameE\n" +
                     "from electronic, itemelectronic, producer\n" +
                     "where electronic.ID = itemelectronic.ElectronicID\n" +
                     "and electronic.ProducerID = producer.ID;";
@@ -53,7 +53,7 @@ public class ElectronicDAOImpl implements ElectronicDAO{
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Producer producer = new Producer(rs.getInt("idProducer"), rs.getString("nameProducer"), rs.getString("Address"));
-                Electronic electronic = new Electronic(rs.getInt("idElectronic"), rs.getString("Name"), 
+                Electronic electronic = new Electronic(rs.getInt("idElectronic"), rs.getString("nameE"), 
                         rs.getFloat("Price"), rs.getString("Type"), rs.getInt("Ram"), rs.getString("Color"),
                         rs.getFloat("ScreenSize"), rs.getString("ScreenType"), rs.getString("OperatingSystem"),
                         rs.getDate("ReleaseDate"), rs.getInt("Battery"),rs.getInt("Charger"), producer);
@@ -71,10 +71,10 @@ public class ElectronicDAOImpl implements ElectronicDAO{
     public List<ItemElectronic> searchItemByName(String name) {
         List<ItemElectronic> list = new ArrayList<>();
         String sql = "select producer.*, itemelectronic.*, electronic.*, electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
-                    "producer.ID as idProducer, producer.Name as nameProducer\n" +
+                    "producer.ID as idProducer, producer.Name as nameProducer,  electronic.Name as nameE\n" +
                     "from electronic, itemelectronic, producer\n" +
                     "where electronic.ID = itemelectronic.ElectronicID\n" +
-                    "and electronic.ProducerID = producer.ID and itemelectronic.Name like ?;";
+                    "and electronic.ProducerID = producer.ID and electronic.Name like ?;";
         
         try {
             
@@ -83,7 +83,7 @@ public class ElectronicDAOImpl implements ElectronicDAO{
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Producer producer = new Producer(rs.getInt("idProducer"), rs.getString("nameProducer"), rs.getString("Address"));
-                Electronic electronic = new Electronic(rs.getInt("idElectronic"), rs.getString("Name"), 
+                Electronic electronic = new Electronic(rs.getInt("idElectronic"), rs.getString("nameE"), 
                         rs.getFloat("Price"), rs.getString("Type"), rs.getInt("Ram"), rs.getString("Color"),
                         rs.getFloat("ScreenSize"), rs.getString("ScreenType"), rs.getString("OperatingSystem"),
                         rs.getDate("ReleaseDate"), rs.getInt("Battery"),rs.getInt("Charger"), producer);
@@ -100,7 +100,7 @@ public class ElectronicDAOImpl implements ElectronicDAO{
     @Override
     public ItemElectronic searchItemByID(int id) {
          String sql = "select producer.*, itemelectronic.*, electronic.*,electronic.ID as idElectronic, itemelectronic.ID as idItem,\n" +
-                    "producer.ID as idProducer, producer.Name as nameProducer\n" +
+                    "producer.ID as idProducer, producer.Name as nameProducer, electronic.Name as nameE\n" +
                     "from electronic, itemelectronic, producer\n" +
                     "where electronic.ID = itemelectronic.ElectronicID\n" +
                     "and electronic.ProducerID = producer.ID and itemelectronic.ID = ?;";
@@ -112,7 +112,7 @@ public class ElectronicDAOImpl implements ElectronicDAO{
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Producer producer = new Producer(rs.getInt("idProducer"), rs.getString("nameProducer"), rs.getString("Address"));
-                Electronic electronic = new Electronic(rs.getInt("idElectronic"), rs.getString("Name"), 
+                Electronic electronic = new Electronic(rs.getInt("idElectronic"), rs.getString("nameE"), 
                         rs.getFloat("Price"), rs.getString("Type"), rs.getInt("Ram"), rs.getString("Color"),
                         rs.getFloat("ScreenSize"), rs.getString("ScreenType"), rs.getString("OperatingSystem"),
                         rs.getDate("ReleaseDate"), rs.getInt("Battery"),rs.getInt("Charger"), producer);

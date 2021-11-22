@@ -18,6 +18,7 @@ public class ItemBook implements Serializable{
     private String description;
     private String photo;
     private Book book;
+    private int amount;
 
     public ItemBook() {
     }
@@ -86,6 +87,14 @@ public class ItemBook implements Serializable{
 
     public void setBook(Book book) {
         this.book = book;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
     
     

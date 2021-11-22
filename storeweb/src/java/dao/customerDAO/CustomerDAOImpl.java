@@ -43,16 +43,30 @@ public class CustomerDAOImpl implements CustomerDAO{
         return null;
     }
     
-    public void signUp(Customer customer) {
+    public void signUp(String username, String password) {
         String query = "INSERT INTO account(username, password) VALUES (?, ?);";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(1, customer.getAccount().getUsername());
-            ps.setString(2, customer.getAccount().getPassword());
+            ps.setString(1, username);
+            ps.setString(2, password);
             ps.executeUpdate();
         } catch (Exception e) {
-            System.out.println(e);
+             System.out.println(e);
         }
+    }
+    
+    public Account checkAccountExist(String user){
+        String queyry = "SELECT * FROM account WHERE username=?";
+        try{
+            ps = connection.prepareStatement(queyry);
+            ps.setString(1, user);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Account(rs.getInt(1), rs.getString(2), rs.getString(3));
+            }
+        } catch (Exception e) {
+        }
+        return null;
     }
 
     @Override
@@ -72,6 +86,11 @@ public class CustomerDAOImpl implements CustomerDAO{
 
     @Override
     public void viewOrder(Order order) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void signUp(Customer customer) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

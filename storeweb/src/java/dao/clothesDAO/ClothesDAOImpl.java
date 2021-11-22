@@ -70,7 +70,7 @@ public class ClothesDAOImpl implements ClothesDAO{
                     "brandclothes.ID as idBrand, brandclothes.Name as nameBrand, clothes.Name as nameClothes\n" +
                     "from clothes, itemclothes, brandclothes\n" +
                     "where clothes.ID = itemclothes.ClothesID\n" +
-                    "and clothes.BrandClothesID = brandclothes.ID and itemclothes.Name like ?;";
+                    "and clothes.BrandClothesID = brandclothes.ID and clothes.Name like ?;";
         
         try {
             

@@ -6,6 +6,7 @@
 package Controller;
 
 import dao.customerDAO.CustomerDAOImpl;
+import model.customer.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,7 +14,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.customer.Account;
 
 /**
  *
@@ -38,17 +38,17 @@ public class SignUpControl extends HttpServlet {
         String pass = request.getParameter("pass");
         String repass = request.getParameter("repass");
         if(!pass.equals(repass)){
-            request.setAttribute("mess", "Password and Repassword are not the same");
-            response.sendRedirect("Login.jsp");
+            
+            response.sendRedirect("SignUp.jsp");
         }else{
             CustomerDAOImpl adao= new CustomerDAOImpl();
-            Account a = adao.checkLogin(user, pass);
+            Account a = adao.checkAccountExist(user);
             if(a==null){
-               // adao.signUp(user, pass);
-                request.getRequestDispatcher("Cart.jsp").forward(request, response);
+                adao.signUp(user, pass);
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
             }else{
-                request.setAttribute("mess", "Account already exists");
-                response.sendRedirect("Login.jsp");
+                request.setAttribute("mess", "Wrong username or password");
+                response.sendRedirect("SignUp.jsp");
             }
         }
         

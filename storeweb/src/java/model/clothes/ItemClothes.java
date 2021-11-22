@@ -18,7 +18,11 @@ public class ItemClothes implements Serializable{
     private String description;
     private String photo;
     private Clothes clothes;
+    private int amount;
 
+   
+    
+    
     public ItemClothes() {
     }
 
@@ -87,7 +91,13 @@ public class ItemClothes implements Serializable{
     public void setClothes(Clothes clothes) {
         this.clothes = clothes;
     }
-    
+     public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
     
     
 }

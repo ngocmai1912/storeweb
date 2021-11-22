@@ -10,7 +10,7 @@
         </form>
         <div class="d-inline-flex">
             <form action="cart" method="get" class="form-inline my-2 my-lg-0">
-            <a class="btn btn-danger btn-sm mr-3" href="Cart.jsp">
+            <a class="btn btn-danger btn-sm mr-3" href="cart">
                 <i class="fa fa-shopping-cart"></i> Cart
             </a>
         </form>
