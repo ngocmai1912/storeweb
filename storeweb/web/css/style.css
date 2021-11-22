@@ -1,70 +1,74 @@
-/*
-** Style Simple Ecommerce Theme for Bootstrap 4
-** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
-*/
-.bloc_left_price {
-    color: #c01508;
-    text-align: center;
+#main {
+    width: 1440px;
+    height: 900px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.submain {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content:center;
+}
+
+#form {
+    width: 350px;
+    height: 450px;
+    margin-top: 232px
+}
+
+#lable {
+    color: #4A5568;;
+}
+
+#lablelogin {
+    font-size: 30px;
     font-weight: bold;
-    font-size: 150%;
+    margin-bottom: 15px;
 }
-.parent {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+
+#form input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #E8E8E8;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-indent: 5px;
 }
-.text-color {
-    color: #7393B3;
+
+#button-rmb>input {
+    width: 15px;
+    height: 15px;
 }
-.category_block li:hover {
-    background-color: #007bff;
+
+#button-rmb>label {
+    margin-top: 6px;
+    text-indent: 5px;
 }
-.category_block li:hover a {
+
+#forgot-pass {
+    float: right;
+    margin-top: 8px;
+    color: #2C5282;
+}
+
+#button-lg>input {
+    height: 60px;
+    background-color: #04C35C;
     color: #ffffff;
+    border-radius: 5px;
 }
-.category_block li a {
-    color: #343a40;
+
+#button-gg>input {
+    height: 60px;
+    background-color: #2D3748;
+    color: #ffffff;
+    border-radius: 5px;
 }
-.add_to_cart_block .price {
-    color: #c01508;
-    text-align: center;
-    font-weight: bold;
-    font-size: 200%;
-    margin-bottom: 0;
-}
-.add_to_cart_block .price_discounted {
-    color: #343a40;
-    text-align: center;
-    text-decoration: line-through;
-    font-size: 140%;
-}
-.product_rassurance {
-    padding: 10px;
-    margin-top: 15px;
-    background: #ffffff;
-    border: 1px solid #6c757d;
-    color: #6c757d;
-}
-.product_rassurance .list-inline {
-    margin-bottom: 0;
-    text-transform: uppercase;
-    text-align: center;
-}
-.product_rassurance .list-inline li:hover {
-    color: #343a40;
-}
-.reviews_product .fa-star {
-    color: gold;
-}
-.pagination {
-    margin-top: 20px;
-}
-footer {
-    background: #343a40;
-    padding: 40px;
-    margin-top: 20px;
+
+#rfooter {
+    margin-top: 170px;
 }
 footer a {
     color: #f8f9fa!important

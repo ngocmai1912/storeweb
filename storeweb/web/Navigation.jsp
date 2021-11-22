@@ -5,13 +5,13 @@
     <div class="container">
         <a class="navbar-brand" href="home">THE ROSÉ</a>
         <form class="form-inline" action="search" method="get">
-            <input type="text" placeholder="Search..." class="form-control mt-3" name="txtS" style="width: 600px">
-            <button class="btn btn-outline-danger ml-2 mt-3" type="submit">Search</button>
+            <input type="text" placeholder="Nhập từ khóa..." class="form-control mt-3" name="txtS" style="width: 600px">
+            <button class="btn btn-outline-danger ml-2 mt-3" type="submit">Tìm kiếm</button>
         </form>
         <div class="d-inline-flex">
             <form action="cart" method="get" class="form-inline my-2 my-lg-0">
             <a class="btn btn-danger btn-sm mr-3" href="cart">
-                <i class="fa fa-shopping-cart"></i> Cart
+                <i class="fa fa-shopping-cart"></i> Giỏ hàng
             </a>
         </form>
         
@@ -34,10 +34,3 @@
 </nav>
 
 <hr style="border: 2px solid red; margin: 0px">       
-
-<!--<section class="jumbotron text-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">Cửa hàng chất lượng cao</h1>
-        <p class="lead text-muted mb-0">Uy tín tạo nên thương hiệu với hơn 10 năm cung cấp các sản phầm Việt Nam chất lượng cao</p>
-    </div>
-</section>-->

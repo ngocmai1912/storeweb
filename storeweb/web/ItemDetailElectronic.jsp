@@ -68,22 +68,6 @@
                                         </dl>
 
                                         <hr>
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <dl class="param param-inline">
-                                                    <dt>Quantity: </dt>
-                                                    <dd>
-                                                        <select class="form-control form-control-sm" style="width:70px;">
-                                                            <option> 1 </option>
-                                                            <option> 2 </option>
-                                                            <option> 3 </option>
-                                                        </select>
-                                                    </dd>
-                                                </dl>  <!-- item-property .// -->
-                                            </div> <!-- col.// -->
-
-                                        </div> <!-- row.// -->
-                                        <hr>
                                         <a href="cart?id=${detail.id}" class="btn btn-md btn-success text-uppercase">Mua ngay
                                             <% 
                                                int id1 = Integer.parseInt(request.getParameter("pid"));
@@ -131,58 +115,58 @@
                     <c:if test="${detail.electronic.type == 'Mobilephone'}">
                         <p> 
                             <span class="font-weight-bold">Chip: </span>
-                            <span>${d.chip}</span>
+                            <span>Snapdragon 778G 5G</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Camera: </span>
-                            <span>Trước: ${d.selfieCamera}MP, Sau: ${d.primaryCamera}MP</span>
+                            <span>Trước: ${13}MP, Sau: ${32}MP</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Bộ nhớ: </span>
-                            <span>${d.memory}GB</span>
+                            <span>128GB</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Mô tả thêm: </span>
-                            <span>${d.note}</span>
+                            <span>Khung nhôm & Mặt lưng kính cường lực</span>
                         </p>
                     </c:if>
                         
                     <c:if test="${detail.electronic.type == 'Laptop'}">
                         <p> 
                             <span class="font-weight-bold">CPU: </span>
-                            <span>${d.cpu}, ${d.cpuSpeed}GHz</span>
+                            <span>i7 1165G7, 2.8GHz</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Ổ cứng: </span>
-                            <span>${d.typeHardDrive} ${d.hardDrive}GB</span>
+                            <span>SSD 256GB</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Card đồ họa: </span>
-                            <span>${d.graphicCard}</span>
+                            <span>Card tích hợpIntel Iris Xe</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Kích thước: </span>
-                            <span>${d.dimemsions}</span>
+                            <span>304.2 x 203</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Trọng lượng: </span>
-                            <span>${d.weight}</span>
+                            <span>1.236</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Công nghệ màn hình: </span>
-                            <span>${d.displayTechnology}</span>
+                            <span>100% sRGB</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Cổng kết nối: </span>
-                            <span>${d.communicationStandard}</span>
+                            <span>HDMI</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Thiết kế: </span>
-                            <span>${d.design}</span>
+                            <span>Vỏ kim loại nguyên khối</span>
                         </p>
                         <p> 
                             <span class="font-weight-bold">Mô tả thêm: </span>
-                            <span>${d.note}</span>
+                            <span>Bảo mật vân tay; Công tắc khóa camera; Tiêu chuẩn Nền Intel Evo</span>
                         </p>
                     </c:if>
                 </div>

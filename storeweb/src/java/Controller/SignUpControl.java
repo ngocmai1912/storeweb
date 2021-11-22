@@ -34,13 +34,13 @@ public class SignUpControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String user = request.getParameter("user");
-        String pass = request.getParameter("pass");
-        String repass = request.getParameter("repass");
-        if(!pass.equals(repass)){
-            
-            response.sendRedirect("SignUp.jsp");
-        }else{
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
+//        String repass = request.getParameter("repass");
+//        if(!pass.equals(repass)){
+//            
+//            response.sendRedirect("SignUp.jsp");
+//        }else{
             CustomerDAOImpl adao= new CustomerDAOImpl();
             Account a = adao.checkAccountExist(user);
             if(a==null){
@@ -50,7 +50,7 @@ public class SignUpControl extends HttpServlet {
                 request.setAttribute("mess", "Wrong username or password");
                 response.sendRedirect("SignUp.jsp");
             }
-        }
+//        }
         
     }
 

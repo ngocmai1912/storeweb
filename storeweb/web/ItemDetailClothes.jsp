@@ -70,22 +70,7 @@
                                         </dl>
 
                                         <hr>
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <dl class="param param-inline">
-                                                    <dt>Số lượng: </dt>
-                                                    <dd>
-                                                        <select class="form-control form-control-sm" style="width:70px;">
-                                                            <c:forEach begin="1" end="${itemClothes.clothes.quantity}" var="o">
-                                                                <option>${o}</option>
-                                                            </c:forEach>
-                                                        </select>
-                                                    </dd>
-                                                </dl>  <!-- item-property .// -->
-                                            </div> <!-- col.// -->
 
-                                        </div> <!-- row.// -->
-                                        <hr>
                                         <a href="cart?id=${detail.id}" class="btn btn-md btn-success text-uppercase">Mua ngay
                                             <% 
                                                int id1 = Integer.parseInt(request.getParameter("pid"));
