@@ -110,3 +110,28 @@
     height: 50px;
     overflow: hidden;
 }
+
+.card-title a {
+    color: #000000;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.text-price {
+    font-size: 20px;
+}
+
+.nav-effect{
+    color: #000000;
+}
+
+.nav-effect:hover {
+    border-radius: 0;
+}
+
+.nav-pills .nav-link.active {
+    color: #000000;
+    background-color: #e2e1e4;
+    border-radius: 0;
+    font-weight: 600;
+}
