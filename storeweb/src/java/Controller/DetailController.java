@@ -30,7 +30,7 @@ import utils.CartUtils;
  */
 @WebServlet("/detail")
 public class DetailController extends HttpServlet{
-
+    
      private BookDAOImpl bookDAOImpl;
      private ShoesDAOImpl shoesDAOImpl;
      private ClothesDAOImpl clothesDAOImpl;
@@ -47,6 +47,11 @@ public class DetailController extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+                
+        if(req.getParameter("idAdd") != null){
+            int id = Integer.parseInt(req.getParameter("idAdd"));
+            CartUtils.addBookToCart(id);
+        }
         String id = req.getParameter("pid");
         String type = req.getParameter("type");
         if(type.compareToIgnoreCase("book") == 0){
@@ -73,6 +78,7 @@ public class DetailController extends HttpServlet{
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("ItemDetailShoes.jsp");
             requestDispatcher.forward(req, resp);
         }
+        
     }
     
     

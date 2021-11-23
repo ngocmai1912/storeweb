@@ -177,7 +177,7 @@
                     Thêm sản phẩm vào giỏ hàng thành công!
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+                    <a href="detail?pid=${detail.id}&type=${"electronic"}&idAdd=${detail.id}" class="btn btn-danger">OK</a>
                   </div>
                 </div>
               </div>

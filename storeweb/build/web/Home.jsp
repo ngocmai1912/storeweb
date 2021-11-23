@@ -50,7 +50,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                     <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -68,7 +68,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -86,7 +86,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -104,7 +104,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -127,7 +127,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -149,7 +149,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -172,7 +172,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -195,7 +195,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -232,6 +232,7 @@
         <jsp:include page="Footer.jsp"></jsp:include>
   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
     </body>
 </html>
 
