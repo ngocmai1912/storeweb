@@ -55,7 +55,7 @@
                                                             </div>
                                                         </div>
                                                     </th>
-                                                    <td class="align-middle"><strong>${o.price}</strong></td>
+                                                    <td class="align-middle"><strong>${Math.round(o.price)}</strong></td>
                                                    <td class="align-middle">
                                                         <a href="sub?id=${o.id}"><button class="btnSub">-
                                                             </button></a> <strong>${o.amount}</strong>
@@ -77,13 +77,13 @@
                                                             </div>
                                                         </div>
                                                     </th>
-                                                    <td class="align-middle"><strong>${o.price}</strong></td>
+                                                    <td class="align-middle"><strong>${Math.round(o.price)}</strong></td>
                                                     <td class="align-middle">
                                                         <a href="sub?id=${o.id}"><button class="btnSub">-
                                                             </button></a> <strong>${o.amount}</strong>
                                                         <a href="cart?id=${o.id}"><button class="btnAdd">+</button></a>
                                                     </td>
-                                                    <td class="align-middle"><a href="remove?id=${o.id}" class="text-dark">
+                                                            <td class="align-middle"><a href="remove?id=${o.id}" class="text-dark">
                                                         <button type="button" class="btn btn-danger">Delete</button>
                                                         </a>
                                                     </td>
@@ -99,9 +99,10 @@
                                                             </div>
                                                         </div>
                                                     </th>
-                                                    <td class="align-middle"><strong>${o.price}</strong></td>
+                                                    <td class="align-middle"><strong>${Math.round(o.price)}</strong></td>
                                                     <td class="align-middle">
-                                                        
+                                                        <a href="sub?id=${o.id}"><button class="btnSub">-
+                                                            </button></a> <strong>${o.amount}</strong>
                                                         <a href="cart?id=${o.id}"><button class="btnAdd">+</button></a>
                                                     </td>
                                                             <td class="align-middle"><a href="remove?id=${o.id}" class="text-dark">
@@ -120,9 +121,10 @@
                                                             </div>
                                                         </div>
                                                     </th>
-                                                    <td class="align-middle"><strong>${o.price}</strong></td>
-                                                    <td class="align-middle">
-                                                        
+                                                    <td class="align-middle"><strong>${Math.round(o.price)}</strong></td>
+                                                   <td class="align-middle">
+                                                        <a href="sub?id=${o.id}"><button class="btnSub">-
+                                                            </button></a> <strong>${o.amount}</strong>
                                                         <a href="cart?id=${o.id}"><button class="btnAdd">+</button></a>
                                                     </td>
                                                             <td class="align-middle"><a href="remove?id=${o.id}" class="text-dark">
@@ -143,9 +145,9 @@
                                 <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Thành tiền</div>
                                 <div class="p-4">
                                     <ul class="list-unstyled mb-4">
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>${total}</strong></li>
+                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>${Math.round(total)}</strong></li>
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
-                                            <h5 class="font-weight-bold">${sum} ₫</h5>
+                                            <h5 class="font-weight-bold">${Math.round(sum)} ₫</h5>
                                         </li>
                                     </ul><a href="order?total=${total}" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
                                 </div>

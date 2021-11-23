@@ -74,26 +74,8 @@
                                         </dl>
 
                                         <hr>
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <dl class="param param-inline">
-                                                    <dt>Số lượng: </dt>
-                                                    <dd>
-                                                        <select class="form-control form-control-sm" style="width:70px;">
-                                                            <option> 1 </option>
-                                                            <option> 2 </option>
-                                                            <option> 3 </option>
-                                                        </select>
-                                                    </dd>
-                                                </dl>  <!-- item-property .// -->
-                                            </div> <!-- col.// -->
-
-                                        </div> <!-- row.// -->
-                                        <hr>
-                                        <a href="cart?id=${detail.id}&type=${"clothes"}" class="btn btn-md btn-success text-uppercase">Mua ngay
-                                        </a>
-                                        <a href="#" class="btn btn-md btn-outline-danger text-uppercase" data-toggle="modal" data-target="#exampleModalCenter"> Thêm vào giỏ hàng 
-                                        </a>
+                                        <a href="cart?id=${detail.id}&type=${"shoes"}" class="btn btn-md btn-success text-uppercase">Mua ngay</a>
+                                        <a href="#" class="btn btn-md btn-outline-danger text-uppercase" data-toggle="modal" data-target="#exampleModalCenter"> Thêm vào giỏ hàng</a>
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->

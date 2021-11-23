@@ -17,6 +17,7 @@ public class ItemShoes implements Serializable{
     private float price;
     private String description;
     private String photo;
+    private int amount;
     private Shoes shoes;
 
     public ItemShoes() {
@@ -86,6 +87,14 @@ public class ItemShoes implements Serializable{
 
     public void setShoes(Shoes shoes) {
         this.shoes = shoes;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
     
     

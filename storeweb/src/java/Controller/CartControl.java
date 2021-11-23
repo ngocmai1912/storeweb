@@ -49,6 +49,7 @@ public class CartControl extends HttpServlet {
             itemClothes.setAmount(listClothes.get(key));
             listC.add(itemClothes);
             total += (itemClothes.getPrice()*listClothes.get(key));
+            System.out.println("total " + total);
         }
          
         List<ItemBook> listB = new ArrayList<>();
@@ -58,22 +59,27 @@ public class CartControl extends HttpServlet {
             it.setAmount(listBook.get(key));
             listB.add(it);
             total += (it.getPrice()*listBook.get(key));
+            System.out.println("total " + total);
         }
         
         List<ItemElectronic> listE = new ArrayList<>();
         Set<Integer> set3 = CartUtils.listElectronic.keySet();
         for (Integer key : set3) {
             ItemElectronic it = new ElectronicDAOImpl().searchItemByID(key);
+            it.setAmount(listBook.get(key));
             listE.add(it);
             total += (it.getPrice()*listElectronic.get(key));
+            System.out.println("total " + total);
         }
         
         List<ItemShoes> listS = new ArrayList<>();
         Set<Integer> set4 = CartUtils.listShoes.keySet();
-        for (Integer key : set3) {
+        for (Integer key : set4) {
             ItemShoes it = new ShoesDAOImpl().searchItemByID(key);
+            it.setAmount(listBook.get(key));
             listS.add(it);
             total += it.getPrice()*CartUtils.listShoes.get(key);
+            System.out.println("total " + total);
         }
         
         request.setAttribute("listBook", listB);
