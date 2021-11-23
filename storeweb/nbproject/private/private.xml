@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Upstream, based on origin/developer
             <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/Login.jsp</file>
             <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/dao/orderDAO/OrderDAOImpl.java</file>
             <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/css/ItemDetail.css</file>
@@ -34,6 +35,9 @@
             <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/LogoutController.java</file>
             <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/LoginControl.java</file>
             <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/CheckOut.html</file>
+=======
+            <file>file:/D:/PT_TK_ThayQue/BT_nhom/storeweb/storeweb/web/CheckOut.jsp</file>
+>>>>>>> ad2e40b them checkout
         </group>
     </open-files>
 </project-private>
