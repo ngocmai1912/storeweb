@@ -68,7 +68,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"clothes"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -86,7 +86,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"electronic"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -104,7 +104,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"shoes"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>

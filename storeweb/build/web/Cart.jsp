@@ -57,13 +57,12 @@
                                                     </th>
                                                     <td class="align-middle"><strong>${Math.round(o.price)}</strong></td>
                                                    <td class="align-middle">
-                                                        <a href="sub?id=${o.id}"><button class="btnSub">-
-                                                            </button></a> <strong>${o.amount}</strong>
-                                                        <a href="cart?id=${o.id}"><button class="btnAdd">+</button></a>
-                                                    </td>
-                                                            <td class="align-middle"><a href="remove?id=${o.id}" class="text-dark">
-                                                        <button type="button" class="btn btn-danger">Delete</button>
-                                                        </a>
+                                                        <a ><button id="btn-sub-book" class="btnSub">-
+                                                            </button></a> <strong id ="amount">${o.amount}</strong>
+                                                        <button id = "btn-add-book" class="btnAdd">+</button>
+                                                    </td>d
+                                                    <td class="align-middle">
+                                                        <a href="cart?dl=${o.id}&type=${"book"}"><button type="button" class="btn btn-danger">Delete</button></a>
                                                     </td>
                                                 </tr> 
                                             </c:forEach>
@@ -79,13 +78,12 @@
                                                     </th>
                                                     <td class="align-middle"><strong>${Math.round(o.price)}</strong></td>
                                                     <td class="align-middle">
-                                                        <a href="sub?id=${o.id}"><button class="btnSub">-
-                                                            </button></a> <strong>${o.amount}</strong>
-                                                        <a href="cart?id=${o.id}"><button class="btnAdd">+</button></a>
+                                                        <a ><button id="btn-sub-clothes" class="btnSub">-
+                                                            </button></a> <strong id ="amount">${o.amount}</strong>
+                                                        <button id = "btn-add-clothes" class="btnAdd">+</button>
                                                     </td>
-                                                            <td class="align-middle"><a href="remove?id=${o.id}" class="text-dark">
-                                                        <button type="button" class="btn btn-danger">Delete</button>
-                                                        </a>
+                                                    <td class="align-middle">
+                                                        <a href="cart?dl=${o.id}&type=${"clothes"}"><button type="button" class="btn btn-danger">Delete</button></a>
                                                     </td>
                                                 </tr> 
                                             </c:forEach>
@@ -101,13 +99,12 @@
                                                     </th>
                                                     <td class="align-middle"><strong>${Math.round(o.price)}</strong></td>
                                                     <td class="align-middle">
-                                                        <a href="sub?id=${o.id}"><button class="btnSub">-
-                                                            </button></a> <strong>${o.amount}</strong>
-                                                        <a href="cart?id=${o.id}"><button class="btnAdd">+</button></a>
+                                                        <a ><button id="btn-sub-electronic" class="btnSub">-
+                                                            </button></a> <strong id ="amount">${o.amount}</strong>
+                                                        <button id = "btn-add-electronic" class="btnAdd">+</button>
                                                     </td>
-                                                            <td class="align-middle"><a href="remove?id=${o.id}" class="text-dark">
-                                                        <button type="button" class="btn btn-danger">Delete</button>
-                                                        </a>
+                                                    <td class="align-middle">
+                                                        <a href="cart?dl=${o.id}&type=${"electronic"}"><button type="button" class="btn btn-danger">Delete</button></a>
                                                     </td>
                                                 </tr> 
                                             </c:forEach>
@@ -122,14 +119,13 @@
                                                         </div>
                                                     </th>
                                                     <td class="align-middle"><strong>${Math.round(o.price)}</strong></td>
-                                                   <td class="align-middle">
-                                                        <a href="sub?id=${o.id}"><button class="btnSub">-
-                                                            </button></a> <strong>${o.amount}</strong>
-                                                        <a href="cart?id=${o.id}"><button class="btnAdd">+</button></a>
+                                                  <td class="align-middle">
+                                                        <a ><button id="btn-sub-shoes" class="btnSub">-
+                                                            </button></a> <strong id ="amount">${o.amount}</strong>
+                                                        <button id = "btn-add-shoes" class="btnAdd">+</button>
                                                     </td>
-                                                            <td class="align-middle"><a href="remove?id=${o.id}" class="text-dark">
-                                                        <button type="button" class="btn btn-danger">Delete</button>
-                                                        </a>
+                                                    <td class="align-middle">
+                                                        <a href="cart?dl=${o.id}&type=${"shoes"}"><button type="button" class="btn btn-danger">Delete</button></a>
                                                     </td>
                                                 </tr> 
                                             </c:forEach>
@@ -162,6 +158,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
-
+    <script>
+        $("#btn-add-book").click(function(){
+             var amount = document.getElementById("amount").innerHTML;
+             var t = 0;
+             t += amount;
+             t++;
+             document.getElementById("amount").innerText = t;
+         });
+         $("#btn-sub-book").click(function(){
+             var amount = document.getElementById("amount").innerHTML;
+             
+             if(amount > 1){
+                 var t = 0;
+                t += amount;
+                 t--;
+             }
+             document.getElementById("amount").innerText = t;
+         });
+    </script>
 </html>
 </html>

@@ -68,7 +68,7 @@ public class OrderControl extends HttpServlet {
         
         List<ItemShoes> listS = new ArrayList<>();
         Set<Integer> set4 = CartUtils.listShoes.keySet();
-        for (Integer key : set3) {
+        for (Integer key : set4) {
             ItemShoes it = new ShoesDAOImpl().searchItemByID(key);
             listS.add(it);
         }
