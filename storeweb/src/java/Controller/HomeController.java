@@ -54,6 +54,8 @@ public class HomeController extends HttpServlet{
         String action = req.getServletPath();
         CartUtils.request = req;
         fillAll(req, resp);
+        if(req.getParameter("idAdd") != null && req.getParameter("type") != null) addToCart(req, resp);
+                    
         
     }
     
@@ -76,6 +78,16 @@ public class HomeController extends HttpServlet{
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("Home.jsp");
         requestDispatcher.forward(req, resp);
 
+    }
+
+    public void addToCart(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("idAdd"));
+        String type = req.getParameter("type");
+        
+        if(type.compareToIgnoreCase("book") == 0) CartUtils.addBookToCart(id);
+        else if(type.compareToIgnoreCase("clothes") == 0) CartUtils.addClothesToCart(id);
+        else if(type.compareToIgnoreCase("electronic") == 0) CartUtils.addElectronicToCart(id);
+        else CartUtils.addShoesToCart(id);
     }
    
 }

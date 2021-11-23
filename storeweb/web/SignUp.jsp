@@ -11,9 +11,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!-- Custom Theme files -->
+        <link href="css/signup.css" rel="stylesheet" type="text/css" media="all" />
+        <!-- //Custom Theme files -->
+        <!-- web font -->
+        
         <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-        <title>Sign Up Form</title>
         <style><%@include file="css/signup.css"%></style>
+        <title>Sign Up Form</title>
     </head>
     <body>
         <!-- main -->
@@ -24,14 +29,20 @@
 			<div class="agileits-top">
 				<form action="signup" method="post">
                                     <p class="text-danger">${mess}</p>
-                                        <input name="username" class="text" type="text" placeholder="Username" required="">
+                                        <input name="user" class="text" type="text" placeholder="Username" required="">
 					<input name="email" class="text email" type="email" placeholder="Email" required="">
-					<input name="password" class="text" type="password" placeholder="Password" required="">
-					<!--<input name="repass" class="text w3lpass" type="password" placeholder="Confirm Password" required="">-->
-					
+					<input name="pass" class="text" type="password" placeholder="Mật khẩu" required="">
+					<input name="repass" class="text w3lpass" type="password" placeholder="Xác nhận mật khẩu" required="">
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>Tôi đồng ý với điều kiện và điều khoản sử dụng</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
 					<input type="submit" value="SIGNUP">
 				</form>
-				<p>Don't have an Account? <a href="Login.jsp"> Login Now!</a></p>
+				<p>Đã có tài khoản <a href="Login.jsp"> Đăng nhập ngay!</a></p>
 			</div>
 		</div>
 		<ul class="colorlib-bubbles">

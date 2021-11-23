@@ -17,6 +17,7 @@ public class ItemElectronic implements Serializable{
     private float price;
     private String description;
     private String photo;
+    private int amount;
     private Electronic electronic;
 
     public ItemElectronic() {
@@ -87,6 +88,15 @@ public class ItemElectronic implements Serializable{
     public void setElectronic(Electronic electronic) {
         this.electronic = electronic;
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+    
     
     
 }

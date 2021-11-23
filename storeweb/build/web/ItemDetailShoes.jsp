@@ -74,18 +74,8 @@
                                         </dl>
 
                                         <hr>
-                                        <a href="cart?id=${detail.id}" class="btn btn-md btn-success text-uppercase">Mua ngay
-                                            <% 
-                                               int id1 = Integer.parseInt(request.getParameter("pid"));
-                                               CartUtils.addShoesToCart(id1); 
-                                            %>
-                                        </a>
-                                        <a href="#" class="btn btn-md btn-outline-danger text-uppercase" data-toggle="modal" data-target="#exampleModalCenter"> Thêm vào giỏ hàng 
-                                            <% 
-                                               int id = Integer.parseInt(request.getParameter("pid"));
-                                               CartUtils.addShoesToCart(id); 
-                                            %>
-                                        </a>
+                                        <a href="cart?id=${detail.id}&type=${"shoes"}" class="btn btn-md btn-success text-uppercase">Mua ngay</a>
+                                        <a href="#" class="btn btn-md btn-outline-danger text-uppercase" data-toggle="modal" data-target="#exampleModalCenter"> Thêm vào giỏ hàng</a>
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->
@@ -109,7 +99,7 @@
                     Thêm sản phẩm vào giỏ hàng thành công!
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+                    <a href="detail?pid=${detail.id}&type=${"shoes"}&idAdd=${detail.id}" class="btn btn-danger">OK</a>
                   </div>
                 </div>
               </div>

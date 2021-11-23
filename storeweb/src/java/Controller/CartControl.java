@@ -40,39 +40,58 @@ public class CartControl extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(request.getParameter("id") != null) handle(request, response);
+        if(request.getParameter("dl") != null ) delete(request, response);
         double total = 0;
         List<ItemClothes> listC = new ArrayList<>();
         Set<Integer> set = listClothes.keySet();
         for (Integer key : set) {
-            ItemClothes itemClothes = new ClothesDAOImpl().searchItemByID(key);
-            itemClothes.setAmount(listClothes.get(key));
-            listC.add(itemClothes);
-            total += (itemClothes.getPrice()*listClothes.get(key));
+            if(listClothes.get(key) != -1){
+                ItemClothes itemClothes = new ClothesDAOImpl().searchItemByID(key);
+                itemClothes.setAmount(listClothes.get(key));
+                listC.add(itemClothes);
+                total += (itemClothes.getPrice()*listClothes.get(key));
+                System.out.println("total " + total);
+            }
+            
         }
          
         List<ItemBook> listB = new ArrayList<>();
         Set<Integer> set2 = listBook.keySet();
         for (Integer key : set2) {
-            ItemBook it = new BookDAOImpl().searchItemByID(key);
-            it.setAmount(listBook.get(key));
-            listB.add(it);
-            total += (it.getPrice()*listBook.get(key));
+            if(listBook.get(key) != -1){
+                ItemBook it = new BookDAOImpl().searchItemByID(key);
+                it.setAmount(listBook.get(key));
+                listB.add(it);
+                total += (it.getPrice()*listBook.get(key));
+                System.out.println("total " + total);
+            }
         }
         
         List<ItemElectronic> listE = new ArrayList<>();
         Set<Integer> set3 = CartUtils.listElectronic.keySet();
         for (Integer key : set3) {
-            ItemElectronic it = new ElectronicDAOImpl().searchItemByID(key);
-            listE.add(it);
-            total += (it.getPrice()*listElectronic.get(key));
+            if(listElectronic.get(key) != -1){
+                ItemElectronic it = new ElectronicDAOImpl().searchItemByID(key);
+                it.setAmount(CartUtils.listElectronic.get(key));
+                listE.add(it);
+                total += (it.getPrice()*listElectronic.get(key));
+                System.out.println("total " + total);
+            }
+            
         }
         
         List<ItemShoes> listS = new ArrayList<>();
         Set<Integer> set4 = CartUtils.listShoes.keySet();
-        for (Integer key : set3) {
-            ItemShoes it = new ShoesDAOImpl().searchItemByID(key);
-            listS.add(it);
-            total += it.getPrice()*CartUtils.listShoes.get(key);
+        for (Integer key : set4) {
+            if(CartUtils.listShoes.get(key) != -1){
+                ItemShoes it = new ShoesDAOImpl().searchItemByID(key);
+                it.setAmount(CartUtils.listShoes.get(key));
+                listS.add(it);
+                total += it.getPrice()*CartUtils.listShoes.get(key);
+                System.out.println("total " + total);
+            }
+            
         }
         
         request.setAttribute("listBook", listB);
@@ -87,5 +106,21 @@ public class CartControl extends HttpServlet {
         requestDispatcher.forward(request, response);
     }
 
-   
+    
+    public void handle(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        String type = req.getParameter("type");
+        if(type.compareToIgnoreCase("book") == 0) CartUtils.addBookToCart(id);
+        else if(type.compareToIgnoreCase("clothes") == 0) CartUtils.addClothesToCart(id);
+        else if(type.compareToIgnoreCase("electronic") == 0) CartUtils.addElectronicToCart(id);
+        else CartUtils.addShoesToCart(id);
+    }
+   public void delete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("dl"));
+        String type = req.getParameter("type");
+        if(type.compareToIgnoreCase("book") == 0) listBook.put(id, -1);
+        else if(type.compareToIgnoreCase("clothes") == 0) listClothes.put(id, -1);
+        else if(type.compareToIgnoreCase("electronic") == 0) listElectronic.put(id, -1);
+        else CartUtils.listShoes.put(id, -1);
+    }
 }

@@ -47,10 +47,10 @@
                                               <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"book"}" title="View Product">${o.book.title}</a></h5>
                                               <div class="row">
                                                 <div class="col">
-                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)}VNĐ</p>
+                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                     <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -65,10 +65,10 @@
                                               <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"clothes"}" title="View Product">${o.clothes.name}</a></h5>
                                               <div class="row">
                                                 <div class="col">
-                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)}VNĐ</p>
+                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"clothes"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -83,10 +83,10 @@
                                               <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"electronic"}" title="View Product">${o.electronic.name}</a></h5>
                                               <div class="row">
                                                 <div class="col">
-                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)}VNĐ</p>
+                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"electronic"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -101,10 +101,10 @@
                                               <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"shoes"}" title="View Product">${o.shoes.name}</a></h5>
                                               <div class="row">
                                                 <div class="col">
-                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)}VNĐ</p>
+                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"shoes"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -124,10 +124,10 @@
                                               <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"book"}" title="View Product">${o.book.title}</a></h5>
                                               <div class="row">
                                                 <div class="col">
-                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)}VNĐ</p>
+                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -146,10 +146,10 @@
                                               <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"clothes"}" title="View Product">${o.clothes.name}</a></h5>
                                               <div class="row">
                                                 <div class="col">
-                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)}VNĐ</p>
+                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -169,10 +169,10 @@
                                               <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"electronic"}" title="View Product">${o.electronic.name}</a></h5>
                                               <div class="row">
                                                 <div class="col">
-                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)}VNĐ</p>
+                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -192,10 +192,10 @@
                                               <h5 class="card-title"><a href="detail?pid=${o.id}&type=${"shoes"}" title="View Product">${o.shoes.name}</a></h5>
                                               <div class="row">
                                                 <div class="col">
-                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)}VNĐ</p>
+                                                    <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -232,6 +232,7 @@
         <jsp:include page="Footer.jsp"></jsp:include>
   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
     </body>
 </html>
 

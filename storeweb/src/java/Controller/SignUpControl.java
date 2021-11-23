@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import dao.customerDAO.CustomerDAO;
 import dao.customerDAO.CustomerDAOImpl;
 import model.customer.Account;
 import java.io.IOException;
@@ -14,6 +15,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.customer.Customer;
+import model.order.Order;
 
 /**
  *
@@ -34,23 +37,24 @@ public class SignUpControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String user = request.getParameter("username");
-        String pass = request.getParameter("password");
-//        String repass = request.getParameter("repass");
-//        if(!pass.equals(repass)){
-//            
-//            response.sendRedirect("SignUp.jsp");
-//        }else{
+        String user = request.getParameter("user");
+        String pass = request.getParameter("pass");
+        String repass = request.getParameter("repass");
+        if(!pass.equals(repass)){
+            
+            response.sendRedirect("SignUp.jsp");
+        }else{
             CustomerDAOImpl adao= new CustomerDAOImpl();
+            
             Account a = adao.checkAccountExist(user);
             if(a==null){
                 adao.signUp(user, pass);
                 request.getRequestDispatcher("Login.jsp").forward(request, response);
             }else{
-                request.setAttribute("mess", "Wrong username or password");
+                request.setAttribute("mess", "Username đã tồn tại");
                 response.sendRedirect("SignUp.jsp");
             }
-//        }
+        }
         
     }
 

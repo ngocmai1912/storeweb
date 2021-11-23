@@ -5,10 +5,12 @@
 package dao.orderDAO;
 
 import static dao.DAO.connection;
+import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import model.clothes.ItemClothes;
 import model.customer.Customer;
 import model.order.Cart;
 import model.order.Order;
@@ -20,6 +22,12 @@ import model.order.Shipment;
  * @author hoaha
  */
 public class OrderDAOImpl implements OrderDAO{
+    public OrderDAOImpl() {
+        super();
+    }
+    
+    PreparedStatement ps = null; 
+    ResultSet rs = null;
 
     @Override
     public void addOrder(Order o) {
@@ -82,5 +90,18 @@ public class OrderDAOImpl implements OrderDAO{
         }
         return list;
     }
+     public void sign(String sum) {
+        String query = "INSERT INTO orderr(sum) VALUES ('d');";
+        try {
+            ps = connection.prepareStatement(query);
+         //   ps.setArray(1, (Array) get);
+            ps.setString(1, sum);
+            ps.executeUpdate();
+        } catch (Exception e) {
+             System.out.println(e);
+        }
+    }
+
+    
     
 }
