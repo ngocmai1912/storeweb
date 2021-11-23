@@ -50,7 +50,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                     <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                     <a href="detail?pid=${o.id}&type=${"book"}" title="View Product" class="btn btn-outline-danger btn-block">CHI TIẾT SẢN PHẨM</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -68,7 +68,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"clothes"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="detail?pid=${o.id}&type=${"clothes"}" title="View Product" class="btn btn-outline-danger btn-block">CHI TIẾT SẢN PHẨM</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -86,7 +86,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"electronic"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                   <a href="detail?pid=${o.id}&type=${"electronic"}" title="View Product" class="btn btn-outline-danger btn-block">CHI TIẾT SẢN PHẨM</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -104,7 +104,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"shoes"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="detail?pid=${o.id}&type=${"shoes"}" title="View Product" class="btn btn-outline-danger btn-block">CHI TIẾT SẢN PHẨM</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -127,7 +127,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="detail?pid=${o.id}&type=${"book"}" title="View Product" class="btn btn-outline-danger btn-block">CHI TIẾT SẢN PHẨM</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -149,7 +149,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="detail?pid=${o.id}&type=${"book"}" title="View Product" class="btn btn-outline-danger btn-block">CHI TIẾT SẢN PHẨM</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -172,7 +172,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="detail?pid=${o.id}&type=${"book"}" title="View Product" class="btn btn-outline-danger btn-block">CHI TIẾT SẢN PHẨM</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -195,7 +195,7 @@
                                                     <p class="text-warning font-weight-bold text-price">${Math.round(o.price)} VNĐ</p>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="?idAdd=${o.id}&type=${"book"}" class="btn btn-outline-danger btn-block">THÊM VÀO GIỎ HÀNG</a>
+                                                    <a href="detail?pid=${o.id}&type=${"book"}" title="View Product" class="btn btn-outline-danger btn-block">CHI TIẾT SẢN PHẨM</a>
                                                 </div>
                                               </div>
                                             </div>
@@ -208,25 +208,6 @@
                     
                 </div>
 
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">THÔNG BÁO</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Thêm sản phẩm vào giỏ hàng thành công!
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
-                  </div>
-                </div>
-              </div>
             </div>
         </div>
         <jsp:include page="Footer.jsp"></jsp:include>
