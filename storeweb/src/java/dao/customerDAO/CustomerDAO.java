@@ -20,4 +20,5 @@ public interface CustomerDAO {
     public Account checkLogin(String username, String password);
     public void signUp(String username, String password);
     public Account checkAccountExist(String user);
+    public int getCustomerID(int idAccount);
 }

@@ -90,12 +90,15 @@ public class OrderDAOImpl implements OrderDAO{
         }
         return list;
     }
-     public void sign(String sum) {
-        String query = "INSERT INTO orderr(sum) VALUES ('d');";
+     public void insertCart(int CustomerID, int Quantity, boolean CartStatus, int TotalPrice) {
+        String query = "INSERT INTO cart(CustomerID, Quantity, CartStatus, TotalPrice) VALUES (?,?,?,?);";
         try {
             ps = connection.prepareStatement(query);
          //   ps.setArray(1, (Array) get);
-            ps.setString(1, sum);
+         ps.setInt(1, CustomerID);
+         ps.setInt(2, Quantity);
+            ps.setBoolean(3, CartStatus);
+            ps.setInt(4, TotalPrice);
             ps.executeUpdate();
         } catch (Exception e) {
              System.out.println(e);

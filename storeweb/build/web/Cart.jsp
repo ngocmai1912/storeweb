@@ -145,7 +145,7 @@
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
                                             <h5 class="font-weight-bold">${Math.round(sum)} ₫</h5>
                                         </li>
-                                    </ul><a href="order?total=${total}" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
+                                    </ul><a href="order?total=${total}&quantity=${quantity}" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
                                 </div>
                             </div>
                         </div>

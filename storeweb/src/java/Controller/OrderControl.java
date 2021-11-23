@@ -9,6 +9,7 @@ import dao.bookDAO.BookDAOImpl;
 import dao.clothesDAO.ClothesDAOImpl;
 import dao.customerDAO.CustomerDAOImpl;
 import dao.electronicDAO.ElectronicDAOImpl;
+import dao.orderDAO.OrderDAOImpl;
 import dao.shoesDAO.ShoesDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,6 +23,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.book.ItemBook;
 import model.clothes.ItemClothes;
 import model.customer.Account;
@@ -31,6 +33,7 @@ import utils.CartUtils;
 import static utils.CartUtils.listBook;
 import static utils.CartUtils.listClothes;
 import static utils.CartUtils.listElectronic;
+import static utils.CartUtils.request;
 
 /**
  *
@@ -41,44 +44,18 @@ public class OrderControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int total = (int) Float.parseFloat(req.getParameter("total"));
+        int total = (int) Float.parseFloat(req.getParameter("total")) + 25000;
+        int quantity = (int) Float.parseFloat(req.getParameter("quantity"));
         req.setAttribute("total", total);
-        List<ItemClothes> listC = new ArrayList<>();
-        Set<Integer> set = listClothes.keySet();
-        for (Integer key : set) {
-            ItemClothes itemClothes = new ClothesDAOImpl().searchItemByID(key);
-            itemClothes.setAmount(listClothes.get(key));
-            listC.add(itemClothes);
-        }
-         
-        List<ItemBook> listB = new ArrayList<>();
-        Set<Integer> set2 = listBook.keySet();
-        for (Integer key : set2) {
-            ItemBook it = new BookDAOImpl().searchItemByID(key);
-            it.setAmount(listBook.get(key));
-            listB.add(it);
-        }
         
-        List<ItemElectronic> listE = new ArrayList<>();
-        Set<Integer> set3 = CartUtils.listElectronic.keySet();
-        for (Integer key : set3) {
-            ItemElectronic it = new ElectronicDAOImpl().searchItemByID(key);
-            listE.add(it);
-        }
+        HttpSession session = req.getSession();
+        Account a = (Account) session.getAttribute("acc");
+        int idCustomer = new CustomerDAOImpl().getCustomerID(a.getId());
+        boolean cartStatus =true;
         
-        List<ItemShoes> listS = new ArrayList<>();
-        Set<Integer> set4 = CartUtils.listShoes.keySet();
-        for (Integer key : set4) {
-            ItemShoes it = new ShoesDAOImpl().searchItemByID(key);
-            listS.add(it);
-        }
+        OrderDAOImpl daoo= new OrderDAOImpl();
+        daoo.insertCart(idCustomer, quantity, cartStatus, total);
         
-        req.setAttribute("listBook", listB);
-        req.setAttribute("listClothes", listC);
-        req.setAttribute("listElectronic", listE);
-        req.setAttribute("listShoes", listS);
-        
-        req.setAttribute("sum", total);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("CheckOut.jsp");
         requestDispatcher.forward(req, resp);
         

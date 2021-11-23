@@ -69,7 +69,7 @@ public class CustomerDAOImpl implements CustomerDAO{
              System.out.println(e);
         }
     }
-
+    
     @Override
     public void addCustomer(Customer customer) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -89,4 +89,24 @@ public class CustomerDAOImpl implements CustomerDAO{
     public void viewOrder(Order order) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }   
+
+    @Override
+    public int getCustomerID(int idAccount) {
+        
+        String sql = "select customer.ID as idCustomer from customer, account"
+                + "where account.ID = customer.AccountID and account.ID = ?";
+         try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, idAccount);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int idCustomer = rs.getInt("idCustomer");
+                return idCustomer;
+            }
+            
+        } catch (Exception e) {
+             System.out.println(e);
+        }
+        return -1;
+    }
 }

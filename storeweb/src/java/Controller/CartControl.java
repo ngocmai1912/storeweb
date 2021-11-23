@@ -93,13 +93,13 @@ public class CartControl extends HttpServlet {
             }
             
         }
-        
+        int quantity = listB.size()+ listC.size() + listE.size() + listS.size();
         request.setAttribute("listBook", listB);
         request.setAttribute("listClothes", listC);
         request.setAttribute("listElectronic", listE);
         request.setAttribute("listShoes", listS);
         request.setAttribute("total", total);
-        
+        request.setAttribute("quantity", quantity);
         request.setAttribute("sum", total);
         
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("Cart.jsp");

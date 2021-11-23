@@ -3,37 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/Login.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/dao/orderDAO/OrderDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/css/ItemDetail.css</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/Footer.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/ItemDetailBook.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/dao/bookDAO/BookDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/dao/customerDAO/CustomerDAOImpl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/css/CheckOut.css</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/model/shoes/ItemShoes.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/OrderControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/ItemDetailClothes.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/Cart.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/DetailController.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/utils/CartUtils.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/SignUp.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/ItemDetailElectronic.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/CheckOut.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/model/electronic/ItemElectronic.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/dao/customerDAO/CustomerDAO.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/SignUpControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/CartControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/dao/DAO.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/SubControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/Navigation.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/ShowCartController.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/ItemDetailShoes.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/Home.jsp</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/HomeController.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/LogoutController.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/src/java/Controller/LoginControl.java</file>
-            <file>file:/C:/Users/hoaha/Desktop/storeweb/storeweb/web/CheckOut.html</file>
+            <file>file:/C:/Users/Admin/Downloads/storeweb/storeweb/web/SignUp.jsp</file>
+            <file>file:/C:/Users/Admin/Downloads/storeweb/storeweb/src/java/dao/orderDAO/OrderDAOImpl.java</file>
+            <file>file:/C:/Users/Admin/Downloads/storeweb/storeweb/src/java/Controller/SignUpControl.java</file>
+            <file>file:/C:/Users/Admin/Downloads/storeweb/storeweb/src/java/dao/customerDAO/CustomerDAOImpl.java</file>
+            <file>file:/C:/Users/Admin/Downloads/storeweb/storeweb/src/java/Controller/OrderControl.java</file>
+            <file>file:/C:/Users/Admin/Downloads/storeweb/storeweb/web/Cart.jsp</file>
+            <file>file:/C:/Users/Admin/Downloads/storeweb/storeweb/src/java/Controller/CartControl.java</file>
+            <file>file:/C:/Users/Admin/Downloads/storeweb/storeweb/web/CheckOut.jsp</file>
         </group>
     </open-files>
 </project-private>

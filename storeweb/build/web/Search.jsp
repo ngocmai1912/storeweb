@@ -36,6 +36,7 @@
                 </div>
 
                 <div class="col-lg-9">
+                    <p>Kết quả tìm kiếm cho từ khóa "${txtSearch}":</p>
                    <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
                             <div class="row">
