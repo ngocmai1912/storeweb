@@ -6,15 +6,14 @@
 package Controller;
 
 import dao.customerDAO.CustomerDAOImpl;
-import model.customer.Account;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.customer.Account;
 
 /**
  *
@@ -35,17 +34,19 @@ public class LoginControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String username = request.getParameter("user");
-        String password = request.getParameter("pass");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
         
         CustomerDAOImpl accdao = new CustomerDAOImpl();
         Account a= accdao.checkLogin(username,password);
         if(a == null){
-            request.setAttribute("mess", "Wrong username or password");
+            request.setAttribute("mess", "Sai tài khoản hoặc mật khẩu");
             request.getRequestDispatcher("Login.jsp").forward(request, response);
         }else{
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("Home.jsp");
-            requestDispatcher.forward(request, response);
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", a);
+            response.sendRedirect("home");
+                        
         }
     }
 
