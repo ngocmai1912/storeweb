@@ -40,6 +40,7 @@ public class CartControl extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(request.getParameter("id") != null) handle(request, response);
         double total = 0;
         List<ItemClothes> listC = new ArrayList<>();
         Set<Integer> set = listClothes.keySet();
@@ -87,5 +88,14 @@ public class CartControl extends HttpServlet {
         requestDispatcher.forward(request, response);
     }
 
+    
+    public void handle(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        String type = req.getParameter("type");
+        if(type.compareToIgnoreCase("book") == 0) CartUtils.addBookToCart(id);
+        else if(type.compareToIgnoreCase("clothes") == 0) CartUtils.addClothesToCart(id);
+        else if(type.compareToIgnoreCase("electronic") == 0) CartUtils.addElectronicToCart(id);
+        else CartUtils.addShoesToCart(id);
+    }
    
 }
