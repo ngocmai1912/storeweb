@@ -172,8 +172,8 @@
                      var t = 0;
                     t += amount;
                      t--;
-                 }
                  document.getElementById("amount").innerText = t;
+                 }
              });
         </script>
     </body>
