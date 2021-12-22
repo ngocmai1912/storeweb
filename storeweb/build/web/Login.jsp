@@ -22,7 +22,7 @@
                 
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="login" method="post" id="login-form">                                    
+				<form action="login" method="post" id="login-form"> 
                                     <label class="my-3">Tên đăng nhập</label>
                                     <input name="username"  type="text" id="inputEmail" class="form-control" placeholder="Username" required="true" autofocus="">
                                     <label class="my-3">Mật khẩu</label>

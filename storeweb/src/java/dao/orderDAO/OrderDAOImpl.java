@@ -6,6 +6,7 @@ package dao.orderDAO;
 
 import static dao.DAO.connection;
 import java.sql.Array;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -30,8 +31,19 @@ public class OrderDAOImpl implements OrderDAO{
     ResultSet rs = null;
 
     @Override
-    public void addOrder(Order o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addOrder(int CustomerID, int CartID, Date date, String status) {
+        String sql = "INSERT INTO order(CustomerID, CartID, Date, Status) VALUES (?,?,?,?);";
+        try {
+            ps = connection.prepareStatement(sql);
+         //   ps.setArray(1, (Array) get);
+            ps.setInt(1, CustomerID);
+            ps.setInt(2, CartID);
+            ps.setDate(3,  date);
+            ps.setString(4, status);
+            ps.executeUpdate();
+        } catch (Exception e) {
+             System.out.println(e);
+        }
     }
 
     @Override

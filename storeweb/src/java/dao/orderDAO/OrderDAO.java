@@ -4,6 +4,7 @@
  */
 package dao.orderDAO;
 
+import java.sql.Date;
 import java.util.List;
 import model.customer.Customer;
 import model.order.Cart;
@@ -16,7 +17,7 @@ import model.order.Shipment;
  * @author hoaha
  */
 public interface OrderDAO {
-    public void addOrder(Order o);
+    public void addOrder(int CustomerID, int CartID, Date date, String status); 
     public void updateOrder(Order o);
     public void deleteOrder(Order o);
     public Customer getCustomerByUsername(String username);

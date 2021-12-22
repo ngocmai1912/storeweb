@@ -13,6 +13,7 @@ import dao.orderDAO.OrderDAOImpl;
 import dao.shoesDAO.ShoesDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -44,17 +45,26 @@ public class OrderControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int total = (int) Float.parseFloat(req.getParameter("total")) + 25000;
-        int quantity = (int) Float.parseFloat(req.getParameter("quantity"));
+        int total = (int) Float.parseFloat(req.getParameter("total"));
         req.setAttribute("total", total);
         
         HttpSession session = req.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int idCustomer = new CustomerDAOImpl().getCustomerID(a.getId());
-        boolean cartStatus =true;
+        int quantity = (int) session.getAttribute("quantity");
+        if(a != null){
+//            int idCustomer = new CustomerDAOImpl().getCustomerID(a.getId());
+//            OrderDAOImpl orderDAO= new OrderDAOImpl();
+//            boolean cartStatus =true;
+//            orderDAO.insertCart(idCustomer, quantity, cartStatus, total);
+////            Date date = new Date();
+////            orderDAO.addOrder(idCustomer, "1", , "order");
+        }
+        else{
+            request.setAttribute("mess", "Vui lòng đăng nhập trước khi thanh toán");
+        }
         
-        OrderDAOImpl daoo= new OrderDAOImpl();
-        daoo.insertCart(idCustomer, quantity, cartStatus, total);
+        
+        
         
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("CheckOut.jsp");
         requestDispatcher.forward(req, resp);

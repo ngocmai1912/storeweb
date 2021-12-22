@@ -23,19 +23,13 @@
     <h2 class="jumbotron text-center text-white back">CheckOut</h2>
     <div class="row">
       <div class="col-sm-7 "><br>
-          
+          <form action="cart" method="post">
           <h3 class="text-muted"> Địa chỉ nhận hàng</h3><br>
              <p>Địa chỉ*</p><br>
             <input class="form-control" id="name" name="name" placeholder="Số nhà, ngõ..." type="text" required>
             <br><input class="form-control" id="name" name="name" placeholder="Toà nhà, số phòng(chung cư...)" type="text" required><br>
             <p>Tỉnh, thành phố*</p><br>
-            <select class="form-control">
-            <option>Hà Nội</option>
-            <option>Hồ Chí Minh</option>
-            <option>Thanh Hoá</option>
-            <option>Nam Định</option>
-            <option>Ninh Bình</option>
-            </select>
+            <input class="form-control"name="tỉnh, thành phố" type="tỉnh" required><br>
             <p>Quận, huyện*</p><br>
             <input class="form-control"  name="tỉnh, thành phố" type="tỉnh" required><br>
             <p>Phường, xã*</p><br>
@@ -50,22 +44,24 @@
                     <input name="email" placeholder="Email"  type="email" ><br>
                 </div>
             </div>
+            </form>
       </div>
            <div class="col-sm-5 jumbotron front">
                <h3 class=" text-center">Đơn Của Bạn</h3>
        
         <div class="shopping-cart">
             <div class="px-4 px-lg-0">
-                <form action="order" method="post">
-                                    <ul class="list-unstyled mb-4">
-                                        
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>${Math.round(total)} ₫</strong></li>
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Phí vận chuyển</strong><strong>25.000 ₫</strong></li>
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
-                                            <h5 class="font-weight-bold">${Math.round(total)+ 25000} ₫</h5>
-                                        </li>
-                                    </ul>
-            </form>                     
+
+   
+                <ul class="list-unstyled mb-4">
+
+                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>${total} ₫</strong></li>
+                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Phí vận chuyển</strong><strong>25.000 ₫</strong></li>
+                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
+                        <h5 class="font-weight-bold">${total+25000} ₫</h5>
+                    </li>
+                </ul>
+                                                
             <p>Đơn vị vận chuyển</p> 
             <p class="text-warning"> [Bạn có thể theo dõi đơn hàng khi chọn một trong các đơn vị vận chuyển]</p>
            <div class="d-block my-3">
@@ -95,8 +91,11 @@
                   <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
                   <label class="custom-control-label" for="paypal">Check</label>
                 </div>
+                <p>${mess} </p>
               </div>
-                   <a href="home" class="btn btn-danger rounded-pill py-2 btn-block">Thanh Toán</a>                    
+              <a href="/storeweb" class="btn btn-danger rounded-pill py-2 btn-block">Thanh Toán</a> 
+                                     
+            
        
       </div>
     </div>

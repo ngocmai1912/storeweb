@@ -93,8 +93,9 @@ public class CustomerDAOImpl implements CustomerDAO{
     @Override
     public int getCustomerID(int idAccount) {
         
-        String sql = "select customer.ID as idCustomer from customer, account"
-                + "where account.ID = customer.AccountID and account.ID = ?";
+        String sql = "select customer.ID as idCustomer\n" +
+                    "from customer, account\n" +
+                    "where account.ID = customer.AccountID and account.ID = ?";
          try {
             ps = connection.prepareStatement(sql);
             ps.setInt(1, idAccount);

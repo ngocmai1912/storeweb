@@ -21,6 +21,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.book.ItemBook;
 import model.clothes.ItemClothes;
 import model.electronic.ItemElectronic;
@@ -94,12 +95,13 @@ public class CartControl extends HttpServlet {
             
         }
         int quantity = listB.size()+ listC.size() + listE.size() + listS.size();
+        HttpSession session = request.getSession();
+            session.setAttribute("quantity", quantity);
         request.setAttribute("listBook", listB);
         request.setAttribute("listClothes", listC);
         request.setAttribute("listElectronic", listE);
         request.setAttribute("listShoes", listS);
         request.setAttribute("total", total);
-        request.setAttribute("quantity", quantity);
         request.setAttribute("sum", total);
         
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("Cart.jsp");
